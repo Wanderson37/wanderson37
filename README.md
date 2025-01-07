@@ -9,7 +9,7 @@ I am communicative, dedicated, and always interested in learning new technologie
 
 <center>
 <a href="#">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wanderson37p&hide_title=true&layout=compact&langs_count=8&theme=chartreuse-dark&role=OWNER" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wanderson37&hide_title=true&layout=compact&langs_count=8&theme=chartreuse-dark&role=OWNER" />
 </a>
 </a>
 <a href="https://www.freecodecamp.org/wanderson37" target="_blank">
