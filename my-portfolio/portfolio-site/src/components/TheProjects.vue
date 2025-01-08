@@ -15,8 +15,10 @@
     data() {
       return {
         projects: [
-          { id: 1, name: 'Project 1', link: 'https://example1.com', description: 'Description of Project 1' },
-          { id: 2, name: 'Project 2', link: 'https://example2.com', description: 'Description of Project 2' },
+          { id: 1, name: 'ToDo List', link: 'https://todo-list37.vercel.app/', description: ' I developed a ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.' 
+            
+          },
+          
         ],
       };
     },
