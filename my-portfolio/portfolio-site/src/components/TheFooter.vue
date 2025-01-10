@@ -2,8 +2,8 @@
     <footer>
       <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
       <div>
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
-        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Wanderson37" target="_blank">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/" target="_blank">LinkedIn</a>
       </div>
     </footer>
   </template>

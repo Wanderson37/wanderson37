@@ -10,12 +10,12 @@
         <img src="../assets/email.svg" alt="Wanderson Oliveira" width="50" />
       </a>
       <a href="https://wa.me/5592992216758">
-        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira" width="50" />
+        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira" target="_blank" width="50" />
       </a>
       <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/">
-        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira" width="50" /></a>
+        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira" target="_blank" width="50" /></a>
       <a href="https://github.com/Wanderson37">
-        <img src="../assets/github.svg" alt="Wanderson Oliveira" width="50" />
+        <img src="../assets/github.svg" alt="Wanderson Oliveira" target="_blank" width="50" />
       </a>
     </div>
   </header>
@@ -39,6 +39,7 @@ header {
   padding: 10px 20px;
   background-color: #282c34;
   color: white;
+  border-radius: 1vh;
 }
 
 .header-text {
@@ -64,4 +65,8 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+
+  
+
 </style>
