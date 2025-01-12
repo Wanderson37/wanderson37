@@ -3,9 +3,9 @@
     <h2>Projects</h2>
     <div class="cards">
       <div class="card-body" v-for="project in projects" :key="project.id">
-        <div class="card-img">
-          <img :src="project.img" alt="project.name" /> 
-        </div>
+        <span class="card-img">
+          <img class="img-card" :src="project.img" alt="project.name" />
+        </span>
         <div class="card-text">
           <a :href="project.link" target="_blank">{{ project.name }}</a>
           <p>{{ project.description }}</p>
@@ -13,13 +13,6 @@
       </div>
     </div>
 
-
-    <ul>
-      <li v-for="project in projects" :key="project.id">
-        <a :href="project.link" target="_blank">{{ project.name }}</a>
-        <p>{{ project.description }}</p>
-      </li>
-    </ul>
   </section>
 </template>
 
@@ -29,22 +22,42 @@ export default {
     return {
       projects: [
         {
-          id: 1, name: 'ToDo List',  img: '@/assets/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+          id: 1, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
 
         },
         {
-          id: 2, name: 'ToDo List', img: '../assets/ToDo.jpg',  link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+          id: 2, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
 
         },
         {
-          id: 3, name: 'ToDo List', img: '../assets/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+          id: 3, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
 
         },
         {
-          id: 4, name: 'ToDo List', img: '../assets/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+          id: 4, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
 
         },
-      ],
+        {
+          id: 5, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+
+        },
+        {
+          id: 6, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+
+        },
+        {
+          id: 7, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+
+        },
+        {
+          id: 8, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+
+        },
+        {
+          id: 9, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
+
+        },]
+
     };
   },
 };
@@ -53,38 +66,55 @@ export default {
 <style>
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: calc(2vw + 10px);
+  max-width: 900px;
+  margin: auto; 
+ 
+
 }
 
 .card-body {
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
-  background-color: aliceblue;
-  border-radius: 10px;
-  }
+  background-color: #8fbc8f;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  transition: all .3s;
+  width: 21rem
+}
 
 .card-img {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%
+}
+
+.img-card {
+  display: block;
+  max-width: 100%;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0;
+  margin: 0;
+  padding: 0
 }
 
 .card-text {
   padding: 20px;
   background-color: black;
-  border-radius: 0 0 10px 10px
-}
-ul {
-  list-style: none;
-  padding: 0;
+  border-radius: 0 0 10px 10px;
 }
 
-li {
-  margin-bottom: 20px;
-}
 
 a {
   font-weight: bold;
