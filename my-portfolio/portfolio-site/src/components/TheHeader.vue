@@ -9,13 +9,13 @@
       <a href="mailto:wanderson_c.o@hotmail.com">
         <img src="../assets/email.svg" alt="Wanderson Oliveira" width="50" />
       </a>
-      <a href="https://wa.me/5592992216758">
-        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira" target="_blank" width="50" />
+      <a href="https://wa.me/5592992216758" target="_blank">
+        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira"  width="50" />
       </a>
-      <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/">
-        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira" target="_blank" width="50" /></a>
-      <a href="https://github.com/Wanderson37">
-        <img src="../assets/github.svg" alt="Wanderson Oliveira" target="_blank" width="50" />
+      <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/" target="_blank">
+        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira"  width="50" /></a>
+      <a href="https://github.com/Wanderson37" target="_blank">
+        <img class= "colored-svg" src="../assets/github.svg" alt="Wanderson Oliveira"  width="50" />
       </a>
     </div>
   </header>
@@ -40,6 +40,10 @@ header {
   background-color: #282c34;
   color: white;
   border-radius: 1vh;
+}
+
+.colored-svg {
+  filter: invert(100%);
 }
 
 .header-text {
