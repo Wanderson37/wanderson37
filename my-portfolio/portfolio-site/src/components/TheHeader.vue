@@ -10,27 +10,27 @@
         <img src="../assets/email.svg" alt="Wanderson Oliveira" width="50" />
       </a>
       <a href="https://wa.me/5592992216758" target="_blank">
-        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira"  width="50" />
+        <img src="../assets/whatsapp.svg" alt="Wanderson Oliveira" width="50" />
       </a>
-      <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/" target="_blank">
-        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira"  width="50" /></a>
+      <a
+        href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/"
+        target="_blank"
+      >
+        <img src="../assets/linkedin.svg" alt="Wanderson Oliveira" width="50"
+      /></a>
       <a href="https://github.com/Wanderson37" target="_blank">
-        <img class= "colored-svg" src="../assets/github.svg" alt="Wanderson Oliveira"  width="50" />
+        <img
+          class="colored-svg"
+          src="../assets/github.svg"
+          alt="Wanderson Oliveira"
+          width="50"
+        />
       </a>
     </div>
   </header>
 </template>
 
-<script>
-// import wandersonUrl from '../assets/wanderson.svg';
-// export default {
-//   data() {
-//     return {
-//       wandersonUrl,
-//     };
-//   },
-// };
-</script>
+<script></script>
 
 <style>
 header {
@@ -48,7 +48,7 @@ header {
 
 .header-text {
   text-align: left;
-  margin: 5px;
+  margin: 5px 70px 0 20px;
 }
 
 .header-contacts {
@@ -56,8 +56,6 @@ header {
   margin-left: auto;
   justify-content: space-between;
   width: 250px;
- 
-  
 }
 
 nav a {
@@ -69,8 +67,4 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
-
-
-  
-
 </style>
