@@ -1,37 +1,19 @@
 <template>
-  <div id="app">
-    <TheHeader />
-    <main>
-      <TheAbout />
-      <TheProjects />
-    </main>
-    <TheFooter />
-  </div>
+  <TheHeader />
+  <TheAbout />
+  <TheProjects />
+  <TheFooter />
 </template>
 
-<script>
-import TheHeader from './components/TheHeader.vue';
-import TheAbout from './components/TheAbout.vue';
-import TheProjects from './components/TheProjects.vue';
-import TheFooter from './components/TheFooter.vue';
-
-export default {
-  components: {
-    TheHeader,
-    TheAbout,
-    TheProjects,
-    TheFooter,
-  },
-};
+<script setup>
+import TheHeader from "./components/TheHeader.vue";
+import TheAbout from "./components/TheAbout.vue";
+import TheProjects from "./components/TheProjects.vue";
+import TheFooter from "./components/TheFooter.vue";
 </script>
 
 <style>
 body {
   font-family: Open-Sans, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-main {
-  padding: 20px;
 }
 </style>
