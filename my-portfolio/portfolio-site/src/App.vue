@@ -1,8 +1,10 @@
 <template>
-  <TheHeader />
-  <TheAbout />
-  <TheProjects />
-  <TheFooter />
+  <q-layout>
+    <TheHeader />
+    <TheAbout />
+    <TheProjects />
+    <TheFooter />
+  </q-layout>
 </template>
 
 <script setup>
@@ -12,8 +14,4 @@ import TheProjects from "./components/TheProjects.vue";
 import TheFooter from "./components/TheFooter.vue";
 </script>
 
-<style>
-body {
-  font-family: Open-Sans, sans-serif;
-}
-</style>
+<style></style>
