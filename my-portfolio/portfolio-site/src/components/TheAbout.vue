@@ -1,7 +1,7 @@
 <template>
   <section id="about">
-    <h2>About Me</h2>
-    <p>
+    <h2 class="text-weight-medium" style="font-size: 30px">About Me</h2>
+    <p style="font-size: 17px">
       I am Brazilian 🇧🇷 and a front-end developer who loves to apply technology
       to solve problems.
       <!-- <br>

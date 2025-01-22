@@ -1,8 +1,8 @@
 <template>
   <q-layout>
     <TheHeader />
-    <!-- <TheAbout />
-    <TheProjects />
+    <TheAbout />
+    <!-- <TheProjects />
     <TheFooter /> -->
   </q-layout>
 </template>
