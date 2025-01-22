@@ -1,6 +1,6 @@
 <template>
   <header>
-    <q-header elevated class="q-header bg-primary header">
+    <q-header class="q-header bg-primary header shadow-17">
       <q-toolbar class="toolbar-header">
         <img
           style="margin: 10px 0px"

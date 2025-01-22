@@ -1,14 +1,20 @@
 <template>
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="text-weight-medium" style="font-size: 30px">Projects</h2>
     <div class="cards">
-      <div class="card-body" v-for="project in projects" :key="project.id">
-        <span class="card-img">
-          <img class="img-card" :src="project.img" alt="project.name" />
-        </span>
+      <div
+        class="card-body shadow-17"
+        v-for="project in projects"
+        :key="project.id"
+      >
+        <div class="card-img">
+          <a class="card-img" :href="project.link" target="_blank">
+            <img class="img-card" :src="project.img" alt="project.name" />
+          </a>
+        </div>
         <div class="card-text">
           <a :href="project.link" target="_blank">{{ project.name }}</a>
-          <p>{{ project.description }}</p>
+          <p style="text-align: justify">{{ project.description }}</p>
         </div>
       </div>
     </div>
@@ -37,8 +43,12 @@ export default {
             " A single page to inform the date of the wedding, with a countdown to the event. The interface is simple and functional, providing an intuitive experience for the user.",
         },
         // {
-        //   id: 3, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
+        //   id: 3,
+        //   name: "ToDo List",
+        //   img: "./public/ToDo.jpg",
+        //   link: "https://todo-list37.vercel.app/",
+        //   description:
+        //     " ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.",
         // },
         // {
         //   id: 4, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
@@ -73,32 +83,30 @@ export default {
 <style>
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: calc(2vw + 10px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: calc(1vw + 10px);
   max-width: 900px;
   margin: auto;
   align-items: center;
-  align-content: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 .card-body {
-  background-color: #8fbc8f;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  transition: all 0.3s;
-  width: 21rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 30vh;
+  max-width: 250px;
+  height: 450px;
+  align-items: center;
+  background-color: #f2f2fa;
 }
 
 .card-img {
   box-sizing: border-box;
   background: none;
-  opacity: 1;
-  border: 0;
-  margin: 0;
-  padding: 0;
   max-width: 100%;
   width: 100%;
   height: 200px;
@@ -106,34 +114,50 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 12px 12px 0 0;
 }
 
 .img-card {
   display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  background: none;
-  opacity: 1;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  object-fit: cover;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card-text {
   padding: 20px;
-  background-color: black;
   border-radius: 0 0 10px 10px;
+  height: max-content;
 }
 
 a {
   font-weight: bold;
   text-decoration: none;
-  color: #42b983;
+  color: #333777;
 }
 
 a:hover {
   text-decoration: underline;
+}
+.card-body:hover {
+  transform: scale(1.05); /* Aumenta o tamanho em 5% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra maior */
+}
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(1vw + 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .card-body {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>

@@ -2,8 +2,8 @@
   <q-layout>
     <TheHeader />
     <TheAbout />
-    <!-- <TheProjects />
-    <TheFooter /> -->
+    <TheProjects />
+    <TheFooter />
   </q-layout>
 </template>
 
