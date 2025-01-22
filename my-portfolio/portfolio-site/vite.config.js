@@ -14,5 +14,5 @@ export default defineConfig({
       ),
     }),
   ],
-  base: "/portfolio-site/",
+  base: "/wanderson37/",
 });
