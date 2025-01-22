@@ -1,9 +1,9 @@
 <template>
   <q-layout>
     <TheHeader />
-    <TheAbout />
+    <!-- <TheAbout />
     <TheProjects />
-    <TheFooter />
+    <TheFooter /> -->
   </q-layout>
 </template>
 

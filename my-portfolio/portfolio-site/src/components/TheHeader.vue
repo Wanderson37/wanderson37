@@ -60,6 +60,11 @@
 <script></script>
 
 <style scoped>
+.q-header header .toolbar-header .toolbar-contacts {
+  width: auto;
+  max-width: 900px;
+  padding: 0px;
+}
 .header {
   position: relative;
   border-radius: 1rem;
@@ -97,7 +102,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
   .header {
     flex-direction: column;
     align-items: center;
@@ -107,20 +112,20 @@ nav a:hover {
   }
   .name {
     text-align: right;
-
-    font-size: 22px;
+    font-size: 25px;
   }
   .text {
     text-align: right;
     padding: 0;
-    font-size: 12px;
+    font-size: 15px;
   }
   .name-text {
-    margin-left: 0;
-    width: 50px;
+    margin-left: -20px;
+    width: auto;
+    padding: 0px;
   }
   .q-header {
-    max-width: 370px;
+    max-width: 570px;
     position: relative;
   }
 }
