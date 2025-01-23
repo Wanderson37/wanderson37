@@ -37,7 +37,7 @@ export default {
         {
           id: 2,
           name: "Save the Date",
-          img: "./savethedate.jpg",
+          img: "ssavethedate.jpg",
           link: "https://savethedate-olive.vercel.app/",
           description:
             " A single page to inform the date of the wedding, with a countdown to the event. The interface is simple and functional, providing an intuitive experience for the user.",
