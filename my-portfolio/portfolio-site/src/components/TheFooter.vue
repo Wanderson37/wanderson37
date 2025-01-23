@@ -1,9 +1,9 @@
 <template>
   <br />
-  <footer class="bg-primary shadown-17">
+  <footer class="bg-primary shadow-17">
     <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
     <a href="https://www.wanderson37.dev" target="_blank">
-      <img src="logow37.svg" />
+      <img class="logosvg" src="logow37.svg" />
     </a>
     <div>
       <a href="https://github.com/Wanderson37" target="_blank">GitHub</a> |
@@ -17,9 +17,9 @@
 </template>
 <script setup></script>
 
-<style>
+<style scoped>
 footer {
-  display: flex;
+  display: block;
   text-align: center;
   padding: 20px;
   color: white;
@@ -32,9 +32,14 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-img {
+.logosvg {
   width: 50px;
   height: 50px;
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.logosvg:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.1));
 }
 </style>
