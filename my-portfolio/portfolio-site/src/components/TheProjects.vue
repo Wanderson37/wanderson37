@@ -29,7 +29,7 @@ export default {
         {
           id: 1,
           name: "ToDo List",
-          img: "/ToDo.jpg",
+          img: "todolist.jpg",
           link: "https://todo-list37.vercel.app/",
           description:
             " ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.",
@@ -37,43 +37,19 @@ export default {
         {
           id: 2,
           name: "Save the Date",
-          img: "/SavetheDate.jpg",
+          img: "savethedate.jpg",
           link: "https://savethedate-olive.vercel.app/",
           description:
             " A single page to inform the date of the wedding, with a countdown to the event. The interface is simple and functional, providing an intuitive experience for the user.",
         },
-        // {
-        //   id: 3,
-        //   name: "ToDo List",
-        //   img: "./public/ToDo.jpg",
-        //   link: "https://todo-list37.vercel.app/",
-        //   description:
-        //     " ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.",
-        // },
-        // {
-        //   id: 4, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
-        // {
-        //   id: 5, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
-        // {
-        //   id: 6, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
-        // {
-        //   id: 7, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
-        // {
-        //   id: 8, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
-        // {
-        //   id: 9, name: 'ToDo List', img: './public/ToDo.jpg', link: 'https://todo-list37.vercel.app/', description: ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
-
-        // },
+        {
+          id: 3,
+          name: "My personal portfolio",
+          img: "portfolio.jpg",
+          link: "https://www.wanderson37.dev",
+          description:
+            " My personal portfolio, with information about me, my skills, and projects. ",
+        },
       ],
     };
   },
@@ -83,7 +59,7 @@ export default {
 <style>
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: calc(1vw + 10px);
   max-width: 900px;
   margin: auto;
@@ -98,7 +74,7 @@ export default {
   margin: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 30vh;
-  max-width: 250px;
+  max-width: 290px;
   height: 450px;
   align-items: center;
   background-color: #f2f2fa;
