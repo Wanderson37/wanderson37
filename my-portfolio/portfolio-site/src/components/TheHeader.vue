@@ -4,7 +4,7 @@
       <q-toolbar class="toolbar-header">
         <img
           style="margin: 10px 0px"
-          src="../assets/wanderson.svg"
+          src="Wanderson.svg"
           alt="Logo Wanderson Oliveira"
           width="150"
         />
