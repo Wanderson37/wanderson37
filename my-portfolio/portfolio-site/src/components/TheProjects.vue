@@ -44,6 +44,14 @@ export default {
         },
         {
           id: 3,
+          name: "Cats Homepage",
+          img: "cats.jpg",
+          link: "https://catspage.vercel.app/",
+          description:
+            " A project using bootstrap to make modern and responsive design, with information about my cats, and a gallery with images of cats.",
+        },
+        {
+          id: 4,
           name: "My personal portfolio",
           img: "portfolio.jpg",
           link: "https://www.wanderson37.dev",
