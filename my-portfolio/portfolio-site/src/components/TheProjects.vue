@@ -126,14 +126,14 @@ a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
     justify-content: center;
   }
   .card-body {
     width: 100%;
-    max-width: 100%;
+    max-width: 300px;
   }
 }
 </style>
