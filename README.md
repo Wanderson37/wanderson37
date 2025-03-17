@@ -1,5 +1,20 @@
-# Vue 3 + TypeScript + Vite
+## 👋 Hi, I am Wanderson
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+I am Brazilian 🇧🇷 and a front-end developer who loves to apply technology to solve problems.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+I have experience in websites with UX/UI design and SEO best practices.
+
+I am communicative, dedicated, and always interested in learning new technologies and improving my skills.
+<hr>
+
+<center>
+<a href="#">
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wanderson37&hide_title=true&layout=compact&langs_count=8&theme=chartreuse-dark&role=OWNER" />
+</a>
+
+<hr> 
+
+<a href="https://www.freecodecamp.org/wanderson37" target="_blank">
+  <img src="https://img.shields.io/freecodecamp/points/wanderson37?label=freeCodeCamp&logo=freecodecamp&style=for-the-badge" />
+</a>
+</center>
