@@ -2,13 +2,11 @@
   <section id="about">
     <h2 class="text-weight-medium" style="font-size: 30px">About Me</h2>
     <p style="font-size: 17px">
-      I am Brazilian 🇧🇷 and a front-end developer who loves to apply technology
-      to solve problems.
-      <!-- <br>
-      I have experience in websites with UX/UI design and SEO best practices. -->
+      I am Brazilian 🇧🇷 and a front-end developer who loves to apply technology to solve problems.
       <br />
-      I am communicative, dedicated, and always interested in learning new
-      technologies and improving my skills.
+      I have experience in websites with UX/UI design and SEO best practices.
+      <br />
+      I am communicative, dedicated, and always interested in learning new technologies and improving my skills.
     </p>
   </section>
 </template>
