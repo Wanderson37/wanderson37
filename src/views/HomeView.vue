@@ -1,5 +1,5 @@
 <template>
-  <q-layout>
+  <q-layout view="lHh lpR lFf" style="background-color: rgb(255, 255, 255)">
     <q-page-container>
       <q-page>
         <TheHeader />
@@ -8,8 +8,6 @@
         <TheFooter />
       </q-page>
     </q-page-container>
-
-    >
   </q-layout>
 </template>
 
