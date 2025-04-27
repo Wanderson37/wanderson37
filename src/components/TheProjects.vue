@@ -1,12 +1,8 @@
 <template>
   <section id="projects">
-    <h2 class="text-weight-medium" style="font-size: 30px">Projects</h2>
+    <h2 class="fs32 text-weight-medium text-center">Projects</h2>
     <div class="cards">
-      <div
-        class="card-body shadow-17"
-        v-for="project in projects"
-        :key="project.id"
-      >
+      <div class="card-body shadow-17" v-for="project in projects" :key="project.id">
         <div class="card-img">
           <a class="card-img" :href="project.link" target="_blank">
             <img class="img-card" :src="project.img" alt="project.name" />
@@ -28,40 +24,39 @@ export default {
       projects: [
         {
           id: 1,
-          name: "ToDo List",
-          img: "todolist.jpg",
-          link: "https://todo-list37.vercel.app/",
+          name: 'ToDo List',
+          img: 'todolist.jpg',
+          link: 'https://todo-list37.vercel.app/',
           description:
-            " ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.",
+            ' ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.'
         },
         {
           id: 2,
-          name: "Save the Date",
-          img: "ssavethedate.jpg",
-          link: "https://savethedate-olive.vercel.app/",
+          name: 'Save the Date',
+          img: 'ssavethedate.jpg',
+          link: 'https://savethedate-olive.vercel.app/',
           description:
-            " A single page to inform the date of the wedding, with a countdown to the event. The interface is simple and functional, providing an intuitive experience for the user.",
+            ' A single page to inform the date of the wedding, with a countdown to the event. The interface is simple and functional, providing an intuitive experience for the user.'
         },
         {
           id: 3,
-          name: "Cats Homepage",
-          img: "cats.jpg",
-          link: "https://catspage.vercel.app/",
+          name: 'Cats Homepage',
+          img: 'cats.jpg',
+          link: 'https://catspage.vercel.app/',
           description:
-            " A project using bootstrap to make modern and responsive design, with information about my cats, and a gallery with images of cats.",
+            ' A project using bootstrap to make modern and responsive design, with information about my cats, and a gallery with images of cats.'
         },
         {
           id: 4,
-          name: "My personal portfolio",
-          img: "portfolio.jpg",
-          link: "https://www.wanderson37.dev",
-          description:
-            " My personal portfolio, with information about me, my skills, and projects. ",
-        },
-      ],
-    };
-  },
-};
+          name: 'My personal portfolio',
+          img: 'portfolio.jpg',
+          link: 'https://www.wanderson37.dev',
+          description: ' My personal portfolio, with information about me, my skills, and projects. '
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style>

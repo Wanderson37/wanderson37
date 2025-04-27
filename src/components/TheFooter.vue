@@ -6,12 +6,9 @@
       <img class="logosvg" src="logow37.svg" />
     </a>
     <div>
-      <a href="https://github.com/Wanderson37" target="_blank">GitHub</a> |
-      <a
-        href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/"
-        target="_blank"
-        >LinkedIn</a
-      >
+      <a href="https://github.com/Wanderson37" target="_blank">GitHub</a>
+      |
+      <a href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/" target="_blank">LinkedIn</a>
     </div>
   </footer>
 </template>
@@ -23,7 +20,6 @@ footer {
   text-align: center;
   padding: 20px;
   color: white;
-  border-radius: 1rem;
 }
 footer a {
   color: #b9bee6;

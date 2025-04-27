@@ -1,7 +1,7 @@
 <template>
-  <section id="about">
-    <h2 class="text-weight-medium" style="font-size: 30px">About Me</h2>
-    <p style="font-size: 17px">
+  <section id="about" class="q-my-xl items-center justify-center">
+    <h2 class="fs32 text-weight-medium text-center">About Me</h2>
+    <p class="fs16 text-center">
       I am Brazilian 🇧🇷 and a front-end developer who loves to apply technology to solve problems.
       <br />
       I have experience in websites with UX/UI design and SEO best practices.
@@ -10,10 +10,3 @@
     </p>
   </section>
 </template>
-
-<style scoped>
-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-</style>

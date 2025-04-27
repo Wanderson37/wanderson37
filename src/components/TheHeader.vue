@@ -1,18 +1,18 @@
 <template>
-  <q-header class="bg-primary shadow-17">
-    <q-toolbar class="toolbar-header">
-      <img style="margin: 10px 0px" src="Wanderson.svg" alt="Logo Wanderson Oliveira" width="150" />
-      <q-toolbar-title class="name-text">
-        <h1 class="name">
-          <strong>Wanderson</strong>
-          Oliveira
-        </h1>
-        <p class="text">Front-End Developer</p>
-      </q-toolbar-title>
-    </q-toolbar>
+  <q-header class="bg-primary shadow-17 q-pa-lg">
+    <q-toolbar class="row items-center justify-between">
+      <div class="q-ml-xl row items-center">
+        <img src="Wanderson.svg" alt="Logo Wanderson Oliveira" width="150" />
+        <q-toolbar-title>
+          <h1 class="fs48">
+            <strong>Wanderson</strong>
+            Oliveira
+          </h1>
+          <p class="text">Front-End Developer</p>
+        </q-toolbar-title>
+      </div>
 
-    <q-toolbar class="toolbar-contacts">
-      <div class="header-contacts">
+      <div class="q-mr-xl q-gutter-x-md">
         <a href="mailto:wanderson_c.o@hotmail.com" aria-label="Email Wanderson Oliveira">
           <img src="../assets/email.svg" alt="Email ícone" width="30" />
         </a>
@@ -106,7 +106,7 @@ nav a:hover {
   .header-contacts {
     margin-left: 0;
   }
-  .q-header .toolbar-header {
+  .q-header {
     width: auto;
   }
 }

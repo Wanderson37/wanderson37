@@ -17,5 +17,3 @@ import TheAbout from '../components/TheAbout.vue'
 import TheProjects from '../components/TheProjects.vue'
 import TheFooter from '../components/TheFooter.vue'
 </script>
-
-<style></style>
