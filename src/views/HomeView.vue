@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh lpR lFf" style="background-color: rgb(255, 255, 255)">
-    <q-page-container>
+    <q-page-container class="no-padding">
       <q-page>
         <TheHeader />
         <TheAbout />
