@@ -1,0 +1,25 @@
+{
+  "hash": "8ec0ae2c",
+  "configHash": "d0a39bab",
+  "lockfileHash": "67c73329",
+  "browserHash": "3308c214",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "17bb6153",
+      "needsInterop": false
+    },
+    "quasar": {
+      "src": "../../node_modules/quasar/dist/quasar.client.js",
+      "file": "quasar.js",
+      "fileHash": "c530f1df",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-IJV5NOMV": {
+      "file": "chunk-IJV5NOMV.js"
+    }
+  }
+}
