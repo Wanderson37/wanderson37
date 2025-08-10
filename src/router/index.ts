@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-const routes = [{ path: '/', component: HomeView }]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      component: () => import('../layouts/MainLayout.vue'),
+      meta: { protected: true, transition: 'slideX' },
+      children: [
+        {
+          path: 'home',
+          alias: '',
+          component: () => import('../views/HomeView.vue')
+        }
+      ]
+    }
+  ]
 })
 
 export default router

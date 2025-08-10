@@ -1,6 +1,11 @@
 <template>
-  <TheAbout />
-  <TheProjects />
+  <q-layout view="lHh lpr lFf" style="background-color: rgb(255, 255, 255)">
+    <TheHeader />
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+    <TheFooter />
+  </q-layout>
 </template>
 
 <script setup>
