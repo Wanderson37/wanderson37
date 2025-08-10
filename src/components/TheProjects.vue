@@ -2,17 +2,17 @@
   <section id="projects">
     <h2 class="fs32 text-weight-medium text-center">Projects</h2>
     <div class="cards">
-      <div class="card-body shadow-17" v-for="project in projects" :key="project.id">
-        <div class="card-img">
+      <q-card class="card-body shadow-17" v-for="project in projects" :key="project.id">
+        <q-card-section class="card-img">
           <a class="card-img" :href="project.link" target="_blank">
             <img class="img-card" :src="project.img" alt="project.name" />
           </a>
-        </div>
-        <div class="card-text">
+        </q-card-section>
+        <q-card-section class="card-text">
           <a :href="project.link" target="_blank">{{ project.name }}</a>
           <p style="text-align: justify">{{ project.description }}</p>
-        </div>
-      </div>
+        </q-card-section>
+      </q-card>
     </div>
   </section>
 </template>
