@@ -14,6 +14,10 @@
       </div>
 
       <div class="q-mr-xl q-gutter-x-md" v-if="$q.screen.gt.sm">
+        <q-btn flat dense to="/" aria-label="Go to Projects section">
+          <img src="/icons/home.svg" alt="Home ícone" width="40" />
+          <BaseTooltip class="text-h6">Home</BaseTooltip>
+        </q-btn>
         <q-btn flat dense to="/cv" aria-label="Go to Projects section">
           <img src="/icons/cv.svg" alt="Curriculo ícone" width="40" />
           <BaseTooltip class="text-h6">Curriculum</BaseTooltip>
