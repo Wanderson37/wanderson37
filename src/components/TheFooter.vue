@@ -22,10 +22,11 @@ footer {
   color: white;
 }
 footer a {
-  color: #b9bee6;
+  color: #b9bee6 !important;
   text-decoration: none;
 }
 footer a:hover {
+  text-decoration-color: #b9bee6 !important;
   text-decoration: underline;
 }
 .logosvg {
