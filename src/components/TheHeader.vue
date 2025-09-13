@@ -14,8 +14,13 @@
       </div>
 
       <div class="q-mr-xl q-gutter-x-md" v-if="$q.screen.gt.sm">
+        <q-btn flat dense to="/cv" aria-label="Go to Projects section">
+          <img src="/icons/cv.svg" alt="Curriculo ícone" width="40" />
+          <BaseTooltip class="text-h6">Curriculum</BaseTooltip>
+        </q-btn>
         <q-btn flat dense href="mailto:wanderson_c.o@hotmail.com" aria-label="Email Wanderson Oliveira">
           <img src="../assets/email.svg" alt="Email ícone" width="40" />
+          <BaseTooltip>Email</BaseTooltip>
         </q-btn>
         <q-btn
           flat
@@ -26,6 +31,7 @@
           aria-label="WhatsApp Wanderson Oliveira"
         >
           <img src="../assets/whatsapp.svg" alt="WhatsApp ícone" width="40" />
+          <BaseTooltip>WhatsApp</BaseTooltip>
         </q-btn>
         <q-btn
           flat
@@ -36,6 +42,7 @@
           aria-label="LinkedIn Wanderson Oliveira"
         >
           <img src="../assets/linkedin.svg" alt="LinkedIn ícone" width="40" />
+          <BaseTooltip>LinkedIn</BaseTooltip>
         </q-btn>
         <q-btn
           flat
@@ -47,6 +54,7 @@
           aria-label="GitHub Wanderson Oliveira"
         >
           <img class="colored-svg" src="../assets/github.svg" alt="GitHub ícone" width="40" />
+          <BaseTooltip>GitHub</BaseTooltip>
         </q-btn>
       </div>
     </q-toolbar>
@@ -74,7 +82,9 @@
   </q-header>
 </template>
 
-<script></script>
+<script setup>
+import BaseTooltip from '@/wrapper/BaseTooltip.vue'
+</script>
 
 <style scoped>
 .colored-svg {
