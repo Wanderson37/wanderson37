@@ -5,7 +5,7 @@
     <div class="q-pa-md">
       <!-- Título + Subtítulo -->
       <div class="q-mb-sm">
-        <h6 class=" text-weight-medium " >
+        <h6 class="text-weight-medium">
           <a v-if="liveUrl" :href="liveUrl">{{ title }}</a>
           <span v-else>{{ title }}</span>
         </h6>
@@ -26,7 +26,8 @@
       <div class="row items-center justify-between q-mt-sm">
         <div class="row items-center q-gutter-xs">
           <q-avatar v-for="(t, i) in techs" :key="i" size="24px" class="bg-transparent" :title="t.label">
-            <img :src="t.icon" :alt="t.label" loading="lazy" ><BaseTooltip>{{ t.label }}</BaseTooltip></img>
+            <img :src="t.icon" :alt="t.label" loading="lazy" />
+            <BaseTooltip>{{ t.label }}</BaseTooltip>
           </q-avatar>
         </div>
 
@@ -64,7 +65,7 @@
 <script setup lang="ts">
 import github from '/icons/github.svg'
 import external from '/icons/external.svg'
-import BaseTooltip from './BaseTooltip.vue';
+import BaseTooltip from './BaseTooltip.vue'
 type Tech = { label: string; icon: string }
 
 defineProps<{
