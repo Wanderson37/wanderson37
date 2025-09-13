@@ -7,7 +7,7 @@
         <ProjectCard v-bind="project" />
       </div>
     </div>
-  </div class="q-pa-md">
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -275,7 +275,7 @@ const projects = [
     description:
       'Full-stack project. Time tracking system with user authentication, project management, and time logging features. Built with React for the front-end, Tailwind CSS for styling, and Supabase for the back-end and database.',
     techs: [
-      { label: 'React.js 3', icon: '/icons/React.svg' },
+      { label: 'React.js', icon: '/icons/React.svg' },
       { label: 'Tailwind', icon: '/icons/Tailwind.svg' },
       { label: 'Supabase', icon: '/icons/Supabase.svg' }
     ],
