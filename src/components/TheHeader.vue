@@ -14,16 +14,16 @@
       </div>
 
       <div class="q-mr-xl q-gutter-x-md" v-if="$q.screen.gt.sm">
-        <q-btn flat dense to="/" aria-label="Go to Projects section">
-          <img src="/icons/home.svg" alt="Home ícone" width="40" />
+        <q-btn flat dense to="/" aria-label="Go to Home">
+          <img src="/icons/home.svg" alt="Home icon" width="40" />
           <BaseTooltip class="text-h6">Home</BaseTooltip>
         </q-btn>
         <q-btn flat dense to="/cv" aria-label="Go to Projects section">
-          <img src="/icons/cv.svg" alt="Curriculo ícone" width="40" />
+          <img src="/icons/cv.svg" alt="Curriculum icon" width="40" />
           <BaseTooltip class="text-h6">Curriculum</BaseTooltip>
         </q-btn>
         <q-btn flat dense href="mailto:wanderson_c.o@hotmail.com" aria-label="Email Wanderson Oliveira">
-          <img src="../assets/email.svg" alt="Email ícone" width="40" />
+          <img src="../assets/email.svg" alt="Email icon" width="40" />
           <BaseTooltip>Email</BaseTooltip>
         </q-btn>
         <q-btn
@@ -34,7 +34,7 @@
           rel="noopener noreferrer"
           aria-label="WhatsApp Wanderson Oliveira"
         >
-          <img src="../assets/whatsapp.svg" alt="WhatsApp ícone" width="40" />
+          <img src="../assets/whatsapp.svg" alt="WhatsApp icon" width="40" />
           <BaseTooltip>WhatsApp</BaseTooltip>
         </q-btn>
         <q-btn
@@ -45,7 +45,7 @@
           rel="noopener noreferrer"
           aria-label="LinkedIn Wanderson Oliveira"
         >
-          <img src="../assets/linkedin.svg" alt="LinkedIn ícone" width="40" />
+          <img src="../assets/linkedin.svg" alt="LinkedIn icon" width="40" />
           <BaseTooltip>LinkedIn</BaseTooltip>
         </q-btn>
         <q-btn
@@ -57,7 +57,7 @@
           rel="noopener noreferrer"
           aria-label="GitHub Wanderson Oliveira"
         >
-          <img class="colored-svg" src="../assets/github.svg" alt="GitHub ícone" width="40" />
+          <img class="colored-svg" src="../assets/github.svg" alt="GitHub icon" width="40" />
           <BaseTooltip>GitHub</BaseTooltip>
         </q-btn>
       </div>
@@ -65,10 +65,10 @@
     <div class="row q-mt-md justify-end" v-if="$q.screen.lt.sm">
       <div class="q-gutter-x-md">
         <a href="mailto:wanderson_c.o@hotmail.com" aria-label="Email Wanderson Oliveira">
-          <img src="../assets/email.svg" alt="Email ícone" width="30" />
+          <img src="../assets/email.svg" alt="Email icon" width="30" />
         </a>
         <a href="https://wa.me/5592992216758" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Wanderson Oliveira">
-          <img src="../assets/whatsapp.svg" alt="WhatsApp ícone" width="30" />
+          <img src="../assets/whatsapp.svg" alt="WhatsApp icon" width="30" />
         </a>
         <a
           href="https://www.linkedin.com/in/wanderson-oliveira-06a1b1196/"
@@ -76,10 +76,10 @@
           rel="noopener noreferrer"
           aria-label="LinkedIn Wanderson Oliveira"
         >
-          <img src="../assets/linkedin.svg" alt="LinkedIn ícone" width="30" />
+          <img src="../assets/linkedin.svg" alt="LinkedIn icon" width="30" />
         </a>
         <a href="https://github.com/Wanderson37" target="_blank" rel="noopener noreferrer" aria-label="GitHub Wanderson Oliveira">
-          <img class="colored-svg" src="../assets/github.svg" alt="GitHub ícone" width="30" />
+          <img class="colored-svg" src="../assets/github.svg" alt="GitHub icon" width="30" />
         </a>
       </div>
     </div>

@@ -15,7 +15,7 @@
             </div>
             <div class="contact-item">
               <q-icon name="call" size="16px" class="q-mr-sm" />
-              <a href="https://wa.me/5592992216758">(92) 91234-5678</a>
+              <a href="https://wa.me/5592992216758">(92) 99221-6758</a>
             </div>
             <div class="contact-item">
               <q-icon name="alternate_email" size="16px" class="q-mr-sm" />
@@ -41,10 +41,10 @@
     <q-separator spaced />
 
     <section class="q-mb-lg">
-      <h2 class="section-title">Resumo</h2>
+      <h2 class="section-title">Summary</h2>
       <p class="section-text">
-        Desenvolvedor Frontend com foco em Vue.js, experiência na criação de componentes reutilizáveis, integração com APIs REST e uso de
-        Quasar. Busco sempre aprimorar minha capacidade de entregar soluções bem estruturadas e de fácil manutenção.
+        Frontend developer focused on Vue.js, experienced in building reusable components, integrating with REST APIs and using Quasar. I
+        continuously strive to deliver well-structured and maintainable solutions.
       </p>
     </section>
 
@@ -53,7 +53,7 @@
       <div class="col-12 col-md-7">
         <!-- Experiência -->
         <section class="q-mb-xl">
-          <h2 class="section-title">Experiência Profissional</h2>
+          <h2 class="section-title">Professional Experience</h2>
 
           <div v-for="(job, idx) in experience" :key="idx" class="job q-mb-lg">
             <div class="row items-start justify-between">
@@ -74,25 +74,26 @@
           </div>
         </section>
 
-        <!-- Projetos -->
+        <!-- Projects -->
         <section class="q-mb-xl">
-          <h2 class="section-title">Projetos Pessoais e Estudos</h2>
-          <q-card flat bordered class="q-pa-md q-mb-md">
-            <div class="row items-start justify-between">
-              <div class="col">
-                <div class="project-name">Impetus Fit — Calculadora de Desenvolvimento Corporal</div>
-                <div class="muted">Mar/2025 – Jun/2025</div>
+          <h2 class="section-title">Personal & Study Projects</h2>
+          <div>
+            <q-card v-for="(p, i) in projects" :key="i" flat bordered class="q-pa-md q-mb-md">
+              <div class="row items-start justify-between">
+                <div class="col">
+                  <div class="project-name">{{ p.title }}</div>
+                  <div class="muted">{{ p.subtitle }}</div>
+                </div>
               </div>
-            </div>
-            <ul class="q-mt-sm">
-              <li>Aplicação em Vue 3 + Pinia com cálculo de IMC, gordura corporal e score de metas.</li>
-              <li>
-                Persistência em
-                <code>localStorage</code>
-                e uso de Chart.js para visualização de progresso.
-              </li>
-            </ul>
-          </q-card>
+              <ul class="q-mt-sm">
+                <li>{{ p.description }}</li>
+                <li v-if="p.liveUrl">
+                  Live:
+                  <a :href="p.liveUrl" target="_blank" rel="noopener">{{ p.liveUrl }}</a>
+                </li>
+              </ul>
+            </q-card>
+          </div>
         </section>
       </div>
 
@@ -100,9 +101,9 @@
       <div class="col-12 col-md-5">
         <!-- Tecnologias -->
         <section class="q-mb-xl">
-          <h2 class="section-title">Tecnologias</h2>
+          <h2 class="section-title">Technologies</h2>
           <div class="tech-group">
-            <div class="tech-title">Linguagens</div>
+            <div class="tech-title">Languages</div>
             <div class="chips">
               <q-chip v-for="t in tech.languages" :key="t" dense>{{ t }}</q-chip>
             </div>
@@ -114,19 +115,19 @@
             </div>
           </div>
           <div class="tech-group q-mt-sm">
-            <div class="tech-title">Ferramentas</div>
+            <div class="tech-title">Tools</div>
             <div class="chips">
               <q-chip v-for="t in tech.tools" :key="t" dense>{{ t }}</q-chip>
             </div>
           </div>
           <div class="tech-group q-mt-sm">
-            <div class="tech-title">Metodologias</div>
+            <div class="tech-title">Methodologies</div>
             <div class="chips">
               <q-chip v-for="t in tech.methods" :key="t" dense>{{ t }}</q-chip>
             </div>
           </div>
           <div class="tech-group q-mt-sm">
-            <div class="tech-title">Outros</div>
+            <div class="tech-title">Others</div>
             <div class="chips">
               <q-chip v-for="t in tech.others" :key="t" dense>{{ t }}</q-chip>
             </div>
@@ -134,16 +135,16 @@
         </section>
 
         <section class="q-mb-xl">
-          <h2 class="section-title">Formação Acadêmica</h2>
+          <h2 class="section-title">Education</h2>
           <div class="edu">
-            <div class="edu-course">Engenharia de Software</div>
+            <div class="edu-course">BSc in Software Engineering</div>
             <div class="edu-school">Gran Faculdade (GRAN)</div>
-            <div class="muted">Início: 2024 | Conclusão prevista: 2028</div>
+            <div class="muted">Start: 2024</div>
           </div>
         </section>
 
         <section class="q-mb-xl">
-          <h2 class="section-title">Certificações e Cursos</h2>
+          <h2 class="section-title">Certifications & Courses</h2>
           <ul class="list">
             <li>CS50: Introduction to Computer Science — HarvardX (2024)</li>
             <li>Responsive Web Design — FreeCodeCamp (2023)</li>
@@ -151,10 +152,10 @@
         </section>
 
         <section class="q-mb-xl">
-          <h2 class="section-title">Idiomas</h2>
+          <h2 class="section-title">Languages</h2>
           <ul class="list">
-            <li>Português — Nativo</li>
-            <li>Inglês — Conversacional</li>
+            <li>Portuguese — Native</li>
+            <li>English — Conversational</li>
           </ul>
         </section>
       </div>
@@ -188,42 +189,145 @@ type Job = {
   bullets: string[]
 }
 
+// Base experience entries
 const experience: Job[] = [
   {
+    title: 'PathDMS – UI Implementation & API Integration',
+    company: 'PathDMS',
+    location: 'Ontario/CAN',
+    start: ' Jan/2025',
+    end: 'Mar/2025',
+    bullets: ['Second front-end dev.', ' Built reusable UI from Figma and integrated REST APIs.']
+  },
+  {
+    title: 'PathDMS – Maintenance',
+    company: 'PathDMS',
+    location: 'Ontario/CAN',
+    start: 'Mar/2025',
+    end: 'Maintenance',
+    bullets: ['Front-end dev.', ' Ongoing maintenance.']
+  },
+  {
     title: 'Frontend Developer',
-    company: 'Mass 5',
-    location: 'Vancouver, CA',
-    start: 'fev/2025',
-    end: 'Atual',
-    bullets: [
-      'Criação e manutenção de interfaces em Vue.js.',
-      'Componentes reutilizáveis com Quasar e Composition API.',
-      'Integração com APIs REST (tabelas, formulários e páginas de detalhes).',
-      'Transição de Tailwind para Quasar e migração de Vue 2 → Vue 3.',
-      'Apoio em decisões técnicas e melhoria de performance.'
-    ]
-  },
-  {
-    title: 'Frontend Developer (Freelancer)',
     company: 'CW Convites',
-    location: 'Manaus, AM',
-    start: 'mar/2025',
-    end: 'Atual',
+    location: 'Manaus, AM/BRA',
+    start: 'Mar/2025',
+    end: 'Present',
     bullets: [
-      'Criação e manutenção de interfaces de portfólio em Vue.js.',
-      'Desenvolvimento de componentes reutilizáveis com Quasar e Composition API.'
+      'Design and maintenance of portfolio interfaces using Vue.js.',
+      'Development of reusable components with Quasar and the Composition API.'
     ]
   },
   {
-    title: 'Frontend Developer (Freelancer)',
-    company: 'RSantos',
-    location: 'Manaus, AM',
-    start: 'jun/2025',
-    end: 'Atual',
+    title: 'MyAbseil – Migration',
+    company: 'Mass 5',
+    location: 'Vancouver/CAN',
+    start: 'Mar/2025',
+    end: 'Jun/2025',
     bullets: [
-      'Criação e manutenção de interfaces de portfólio em Vue.js.',
-      'Desenvolvimento de componentes reutilizáveis com Quasar e Composition API.'
+      'Front-end dev.',
+      'Ongoing maintenance, new features and improvements for an Enterprise SaaS for rope-access (IRATA) companies.'
     ]
+  },
+  {
+    title: 'MyAbseil – Maintenance and Improvements',
+    company: 'Mass 5',
+    location: 'Vancouver/CAN',
+    start: 'Jun/2025',
+    end: 'Maintenance and Improvements',
+    bullets: ['Front-end dev.', 'Migration from Vue 2 + Tailwind to Vue 3 + Quasar. Unified design system and better maintainability.']
+  },
+  {
+    title: 'Frontend Developer',
+    company: 'RSantos',
+    location: 'Manaus, AM/BRA',
+    start: 'Jun/2025',
+    end: 'Present',
+    bullets: [
+      'Design and maintenance of portfolio interfaces using Vue.js.',
+      'Development of reusable components with Quasar and the Composition API.'
+    ]
+  },
+
+  {
+    title: 'PIB Búzios – Website',
+    company: 'PIB Búzios',
+    location: 'Buzios, RJ/BRA',
+    start: 'Aug/2025',
+    end: 'Present',
+    bullets: ['Front-end dev.', 'Church website focused on schedules, ministries and content publishing.']
+  },
+  {
+    title: 'CW Convites – Website',
+    company: 'CW Convites',
+    location: 'Manaus, AM/BRA',
+    start: 'May/2025',
+    end: 'Present',
+    bullets: ['Front-end dev.', 'Portfolio website for a wedding invitation production company.']
+  }
+]
+
+// Projects imported from TheProjects.vue (copied here for Curriculum page)
+const projects = [
+  {
+    title: 'Ponto-pro - Time Tracking System',
+    subtitle: 'React + Tailwind + Supabase',
+    description:
+      'Full-stack project. Time tracking system with user authentication, project management, and time logging features. Built with React for the front-end, Tailwind CSS for styling, and Supabase for the back-end and database.',
+    techs: [
+      { label: 'React.js 3', icon: '/icons/React.svg' },
+      { label: 'Tailwind', icon: '/icons/Tailwind.svg' },
+      { label: 'Supabase', icon: '/icons/Supabase.svg' }
+    ],
+    liveUrl: 'https://ponto-digital-flex.vercel.app/login',
+    repoUrl: 'https://github.com/Wanderson37/ponto-digital-flex',
+    status: 'Completed',
+    thumbnail: '/images/ponto-pro.png'
+  },
+  {
+    title: 'ToDo List',
+    subtitle: 'Vue.js 3 + Vite + Bootstrap',
+    description:
+      'Front-end dev. ToDo List application using Vue.js 3, allowing users to add tasks, mark them as completed, and delete them. The interface is simple and functional, providing an intuitive experience for managing daily tasks.',
+    techs: [
+      { label: 'Vue.js 3', icon: '/icons/Vue.svg' },
+      { label: 'Vite', icon: '/icons/Vite.svg' },
+      { label: 'Tailwind', icon: '/icons/Tailwind.svg' }
+    ],
+    liveUrl: 'https://todo-list37.vercel.app/',
+    repoUrl: 'https://github.com/Wanderson37/ToDo-List',
+    status: 'Completed',
+    thumbnail: '/images/todolist.jpg'
+  },
+  {
+    title: 'Cats Homepage',
+    subtitle: 'HTML + CSS + JavaScript + Bootstrap',
+    description:
+      'A project made for a class in CS50 course using bootstrap to make modern and responsive design, with information about my cats, and a gallery with images of cats.',
+    techs: [
+      { label: 'HTML', icon: '/icons/html.svg' },
+      { label: 'CSS', icon: '/icons/CSS.svg' },
+      { label: 'JavaScript', icon: '/icons/JavaScript.svg' },
+      { label: 'Bootstrap', icon: '/icons/Bootstrap.svg' }
+    ],
+    liveUrl: 'https://catspage.vercel.app/',
+    repoUrl: 'https://github.com/Wanderson37/catspage',
+    status: 'Completed',
+    thumbnail: '/images/cats.jpg'
+  },
+  {
+    title: 'My personal portfolio',
+    subtitle: 'Vue.js 3 + Vite + Quasar',
+    description: 'My personal portfolio, with information about me, my skills, and projects. ',
+    techs: [
+      { label: 'Vue.js 3', icon: '/icons/Vue.svg' },
+      { label: 'Vite', icon: '/icons/Vite.svg' },
+      { label: 'Quasar', icon: '/icons/Quasar.svg' }
+    ],
+    liveUrl: 'https://www.wanderson37.dev',
+    repoUrl: 'https://github.com/Wanderson37/wanderson37',
+    status: 'Ongoing',
+    thumbnail: '/images/portfolio.png'
   }
 ]
 </script>
