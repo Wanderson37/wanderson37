@@ -11,7 +11,9 @@ I am communicative, dedicated, and always interested in learning new technologie
 <a href="#">
   <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wanderson37&hide_title=true&layout=compact&langs_count=8&theme=chartreuse-dark&role=OWNER" />
 </a>
-
+<a href="#">
+  <img height="180" src="https://streak-stats.demolab.com/?user=arnonrdp&theme=dark&background=000000" />
+</a>
 <hr> 
 
 <a href="https://www.freecodecamp.org/wanderson37" target="_blank">
