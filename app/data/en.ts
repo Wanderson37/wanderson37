@@ -188,6 +188,8 @@ const en: SiteContent = {
   contact: {
     title: 'Contact',
     text: 'Write to me by email, or find me on Upwork and LinkedIn.',
+    emailLabel: 'Email',
+    cvLabel: 'CV',
     cvPage: 'CV as a web page'
   },
 

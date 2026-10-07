@@ -32,4 +32,5 @@ useHead(() => ({
   <a href="#main" class="skip-link">{{ t.ui.skipLink }}</a>
   <SiteHeader />
   <NuxtPage />
+  <SiteFooter />
 </template>

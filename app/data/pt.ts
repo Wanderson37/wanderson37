@@ -188,6 +188,8 @@ const pt: SiteContent = {
   contact: {
     title: 'Contato',
     text: 'Escreva por e-mail ou me encontre no Upwork e no LinkedIn.',
+    emailLabel: 'E-mail',
+    cvLabel: 'Currículo',
     cvPage: 'Currículo em página web'
   },
 

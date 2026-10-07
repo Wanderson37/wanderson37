@@ -96,6 +96,8 @@ export interface SiteContent {
   contact: {
     title: string
     text: string
+    emailLabel: string
+    cvLabel: string
     cvPage: string
   }
   footer: {
