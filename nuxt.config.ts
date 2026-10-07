@@ -28,6 +28,9 @@ export default defineNuxtConfig({
         name: 'Archivo',
         provider: 'google',
         weights: ['400 700'],
+        // One variable file for all text; preloading it keeps headings from
+        // re-wrapping late when it replaces the fallback.
+        preload: true,
         // Only the widths the design uses: 100% for text, 112% for headings.
         providerOptions: { google: { experimental: { variableAxis: { wdth: [['100', '112']] } } } }
       },

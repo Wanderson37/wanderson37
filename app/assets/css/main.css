@@ -156,6 +156,17 @@ pre,
   white-space: nowrap;
 }
 
+/* Shown only when JavaScript is off (e.g. the demo's "turn on JavaScript" hint). */
+.no-scripting-only {
+  display: none;
+}
+
+@media (scripting: none) {
+  .no-scripting-only {
+    display: block;
+  }
+}
+
 .skip-link {
   position: absolute;
   left: var(--gutter);
@@ -265,7 +276,18 @@ pre,
 @media print {
   .site-header,
   .site-footer,
-  .skip-link {
+  /* Shown only when JavaScript is off (e.g. the demo's "turn on JavaScript" hint). */
+.no-scripting-only {
+  display: none;
+}
+
+@media (scripting: none) {
+  .no-scripting-only {
+    display: block;
+  }
+}
+
+.skip-link {
     display: none !important;
   }
 

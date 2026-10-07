@@ -119,9 +119,8 @@ function record() {
     </ul>
 
     <p class="demo__hint">{{ online ? d.hintOnline : d.hintOffline }}</p>
-    <noscript>
-      <p class="demo__hint">{{ d.noJs }}</p>
-    </noscript>
+    <!-- Not a <noscript>: its content would be text on the client and break hydration. -->
+    <p class="demo__hint no-scripting-only">{{ d.noJs }}</p>
     <p class="visually-hidden" aria-live="polite">{{ announcement }}</p>
   </section>
 </template>
