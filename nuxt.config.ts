@@ -1,0 +1,27 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2026-10-07',
+  devtools: { enabled: false },
+
+  modules: ['@nuxt/fonts', '@nuxt/image'],
+
+  css: ['~/assets/css/main.css'],
+
+  fonts: {
+    defaults: { subsets: ['latin'], styles: ['normal'] },
+    families: [
+      {
+        name: 'Archivo',
+        provider: 'google',
+        weights: ['400 700'],
+        // Only the widths the design uses: 100% for text, 112% for headings.
+        providerOptions: { google: { experimental: { variableAxis: { wdth: [['100', '112']] } } } }
+      },
+      { name: 'IBM Plex Mono', provider: 'google', weights: [400, 500] }
+    ]
+  },
+
+  image: {
+    format: ['avif', 'webp']
+  }
+})
