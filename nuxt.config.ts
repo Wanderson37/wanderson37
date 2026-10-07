@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-10-07',
   devtools: { enabled: false },
 
-  modules: ['@nuxt/fonts', '@nuxt/image'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/i18n'],
 
   css: ['~/assets/css/main.css'],
 
@@ -23,5 +23,18 @@ export default defineNuxtConfig({
 
   image: {
     format: ['avif', 'webp']
+  },
+
+  // English at the root, Portuguese under /pt. No automatic redirect by browser
+  // language: crawlers and visitors always get the URL they asked for.
+  i18n: {
+    baseUrl: 'https://www.wanderson37.dev',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    locales: [
+      { code: 'en', language: 'en', name: 'English' },
+      { code: 'pt', language: 'pt-BR', name: 'Português' }
+    ]
   }
 })
