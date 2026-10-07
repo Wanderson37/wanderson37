@@ -9,5 +9,6 @@ usePageSeo(() => ({ title: t.value.meta.title, description: t.value.meta.descrip
     <HeroSection />
     <WorkSection />
     <HowIWorkSection />
+    <ServicesSection />
   </main>
 </template>

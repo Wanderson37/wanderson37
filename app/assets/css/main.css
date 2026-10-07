@@ -132,6 +132,20 @@ pre,
   max-width: var(--measure);
 }
 
+/* Title on the left, content on the right (Services, About). */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0 clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
