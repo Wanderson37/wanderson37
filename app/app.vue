@@ -1,12 +1,30 @@
 <script setup lang="ts">
-const t = useSiteContent()
+import { links } from '~/data/links'
 
-// lang, dir, canonical, hreflang alternates (x-default -> English) and og:locale.
+const t = useSiteContent()
+const localePath = useLocalePath()
+
+// lang, canonical, hreflang alternates (x-default -> English) and og:locale.
 const i18nHead = useLocaleHead({ dir: false, seo: true })
+
+const person = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Wanderson Oliveira',
+  jobTitle: t.value.meta.jobTitle,
+  url: links.site + (localePath('/') === '/' ? '' : localePath('/')),
+  email: `mailto:${links.email}`,
+  address: { '@type': 'PostalAddress', addressLocality: 'Manaus', addressCountry: 'BR' },
+  knowsAbout: ['Vue.js', 'Quasar', 'Nuxt'],
+  knowsLanguage: ['pt-BR', 'en'],
+  sameAs: [links.linkedin, links.github, links.upwork]
+}))
+
 useHead(() => ({
   htmlAttrs: { lang: i18nHead.value.htmlAttrs.lang },
   link: i18nHead.value.link,
-  meta: i18nHead.value.meta
+  meta: i18nHead.value.meta,
+  script: [{ type: 'application/ld+json', innerHTML: JSON.stringify(person.value) }]
 }))
 </script>
 
