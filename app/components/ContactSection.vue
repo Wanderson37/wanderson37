@@ -23,7 +23,7 @@ const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(
           <dt>LinkedIn</dt>
           <dd>
             <a :href="links.linkedin" target="_blank" rel="noopener">
-              {{ bare(links.linkedin) }}<span class="visually-hidden"> {{ t.ui.newTab }}</span>
+              {{ bare(links.linkedin) }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
             </a>
           </dd>
         </div>
@@ -31,7 +31,7 @@ const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(
           <dt>GitHub</dt>
           <dd>
             <a :href="links.github" target="_blank" rel="noopener">
-              {{ bare(links.github) }}<span class="visually-hidden"> {{ t.ui.newTab }}</span>
+              {{ bare(links.github) }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
             </a>
           </dd>
         </div>

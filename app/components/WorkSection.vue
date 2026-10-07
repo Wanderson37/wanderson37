@@ -34,7 +34,7 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
               <dt>{{ field.label }}</dt>
               <dd>
                 <a v-if="field.href" :href="field.href" target="_blank" rel="noopener">
-                  {{ field.value }}<span class="visually-hidden"> {{ t.ui.newTab }}</span>
+                  {{ field.value }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
                 </a>
                 <template v-else>{{ field.value }}</template>
               </dd>
@@ -56,7 +56,7 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
           <p class="period">{{ row.period }}</p>
           <p class="log__summary">{{ row.summary }}</p>
           <a v-if="row.href" class="log__link" :href="row.href" target="_blank" rel="noopener">
-            {{ domain(row.href) }}<span class="visually-hidden"> {{ t.ui.newTab }}</span>
+            {{ domain(row.href) }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
           </a>
         </li>
       </ul>
