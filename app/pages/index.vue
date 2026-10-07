@@ -5,7 +5,7 @@ usePageSeo(() => ({ title: t.value.meta.title, description: t.value.meta.descrip
 </script>
 
 <template>
-  <main id="main" class="container">
-    <h1>{{ t.hero.title }}</h1>
+  <main id="main">
+    <HeroSection />
   </main>
 </template>
