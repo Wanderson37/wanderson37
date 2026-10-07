@@ -199,6 +199,13 @@ const pt: SiteContent = {
     rights: 'Wanderson Oliveira'
   },
 
+  notFound: {
+    title: 'Página não encontrada',
+    errorTitle: 'Algo deu errado',
+    text: 'Esta página não existe ou mudou de endereço.',
+    home: 'Ir para a página inicial'
+  },
+
   cv
 }
 

@@ -199,6 +199,13 @@ const en: SiteContent = {
     rights: 'Wanderson Oliveira'
   },
 
+  notFound: {
+    title: 'Page not found',
+    errorTitle: 'Something went wrong',
+    text: 'This page does not exist or has moved.',
+    home: 'Go to the home page'
+  },
+
   cv
 }
 

@@ -136,5 +136,11 @@ export interface SiteContent {
   footer: {
     rights: string
   }
+  notFound: {
+    title: string
+    errorTitle: string
+    text: string
+    home: string
+  }
   cv: CvContent
 }

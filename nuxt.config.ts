@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-10-07',
   devtools: { enabled: false },
 
+  // Render 404.html with real content instead of an empty SPA shell.
+  experimental: { prerenderErrorPages: true },
+
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/i18n'],
 
   css: ['~/assets/css/main.css', '~/assets/css/status-badge.css'],
