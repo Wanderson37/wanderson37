@@ -1,0 +1,9 @@
+<!-- The parent owns the words, the badge owns the look. -->
+<li v-for="entry in entries" :key="entry.id">
+  <time :datetime="entry.at">{{ entry.time }}</time>
+  {{ entry.kind }}
+  <StatusBadge :status="entry.status" :label="labels[entry.status]" />
+</li>
+
+<!-- On its own -->
+<StatusBadge status="queued" label="Saved on device" />

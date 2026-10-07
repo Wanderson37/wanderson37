@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/i18n'],
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/status-badge.css'],
 
   app: {
     head: {

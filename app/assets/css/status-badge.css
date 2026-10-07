@@ -1,0 +1,44 @@
+/* Styles for StatusBadge.vue, kept here so the component shown on the site stays short. */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--graphite);
+  white-space: nowrap;
+}
+
+.status-badge__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--graphite);
+}
+
+.status-badge[data-status='synced'] {
+  color: var(--synced);
+}
+
+.status-badge[data-status='synced'] .status-badge__dot {
+  background: var(--synced);
+}
+
+.status-badge[data-status='queued'] .status-badge__dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--signal);
+}
+
+.status-badge[data-status='syncing'] .status-badge__dot {
+  animation: status-pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes status-pulse {
+  to {
+    opacity: 0.25;
+  }
+}
