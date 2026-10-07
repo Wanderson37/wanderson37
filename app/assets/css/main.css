@@ -254,3 +254,27 @@ pre,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- Print (the CV page prints cleanly on A4) ---------- */
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm;
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10.5pt;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

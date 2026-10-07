@@ -1,5 +1,6 @@
 import type { SiteContent } from './types'
 import { links } from './links'
+import cv from './cv-pt'
 
 // Faithful translation of en.ts: no new facts. Wanderson reviews every string here.
 const pt: SiteContent = {
@@ -26,8 +27,9 @@ const pt: SiteContent = {
     emailMe: 'Enviar e-mail',
     upwork: 'Upwork',
     downloadCv: 'Baixar currículo',
+    downloadPdf: 'Baixar PDF',
     preparingPdf: 'Gerando PDF…',
-    pdfFailed: 'Não foi possível gerar o PDF. Abra a página do currículo.',
+    pdfFailed: 'Não foi possível gerar o PDF. Tente de novo.',
     newTab: '(abre em nova aba)'
   },
 
@@ -195,7 +197,9 @@ const pt: SiteContent = {
 
   footer: {
     rights: 'Wanderson Oliveira'
-  }
+  },
+
+  cv
 }
 
 export default pt

@@ -21,6 +21,38 @@ export interface WorkRow {
 
 export type CheckinStatus = 'synced' | 'queued' | 'syncing'
 
+export interface CvJob {
+  role: string
+  org: string
+  place?: string
+  period: string
+  points: string[]
+}
+
+export interface CvContent {
+  meta: { title: string; description: string }
+  name: string
+  headline: string
+  fileName: string
+  contact: Field[]
+  headings: {
+    summary: string
+    experience: string
+    military: string
+    skills: string
+    education: string
+    certifications: string
+    languages: string
+  }
+  summary: string
+  experience: CvJob[]
+  military: CvJob[]
+  skills: Field[]
+  education: { school: string; degree: string; period: string }[]
+  certifications: string[]
+  languages: string[]
+}
+
 export interface SiteContent {
   meta: {
     title: string
@@ -37,6 +69,7 @@ export interface SiteContent {
     emailMe: string
     upwork: string
     downloadCv: string
+    downloadPdf: string
     preparingPdf: string
     pdfFailed: string
     newTab: string
@@ -103,4 +136,5 @@ export interface SiteContent {
   footer: {
     rights: string
   }
+  cv: CvContent
 }

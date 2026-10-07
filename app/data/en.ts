@@ -1,5 +1,6 @@
 import type { SiteContent } from './types'
 import { links } from './links'
+import cv from './cv-en'
 
 // Facts come only from the brief (section 6). Reword freely, but do not add facts.
 const en: SiteContent = {
@@ -26,8 +27,9 @@ const en: SiteContent = {
     emailMe: 'Email me',
     upwork: 'Upwork',
     downloadCv: 'Download CV',
+    downloadPdf: 'Download PDF',
     preparingPdf: 'Preparing PDF…',
-    pdfFailed: 'The PDF could not be generated. Open the CV page instead.',
+    pdfFailed: 'The PDF could not be generated. Please try again.',
     newTab: '(opens in a new tab)'
   },
 
@@ -195,7 +197,9 @@ const en: SiteContent = {
 
   footer: {
     rights: 'Wanderson Oliveira'
-  }
+  },
+
+  cv
 }
 
 export default en
