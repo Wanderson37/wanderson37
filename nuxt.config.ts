@@ -42,6 +42,31 @@ export default defineNuxtConfig({
     format: ['avif', 'webp']
   },
 
+  vite: {
+    plugins: [
+      {
+        // Nuxt 4.6.0 feeds module files to Vite's dependency scan, and the scan
+        // aborts on `#components` in @nuxtjs/i18n (nuxt/nuxt#36473), so dev runs
+        // without pre-bundling. Same approach as the fix in 4.6.1 (#36477): leave
+        // `#` imports the scan can't resolve out of it. Remove when upgrading Nuxt.
+        name: 'scan-skip-virtual-imports',
+        enforce: 'pre',
+        resolveId: {
+          filter: { id: /^#/ },
+          async handler (id, importer, options) {
+            // `scan` is not in Vite's public hook type; the scanner passes it at runtime.
+            if (!(options as { scan?: boolean }).scan) return
+            try {
+              return await this.resolve(id, importer, { ...options, skipSelf: true })
+            } catch {
+              return { id, external: true }
+            }
+          }
+        }
+      }
+    ]
+  },
+
   // English at the root, Portuguese under /pt. No automatic redirect by browser
   // language: crawlers and visitors always get the URL they asked for.
   i18n: {
