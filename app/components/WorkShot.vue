@@ -33,4 +33,25 @@ defineProps<{ shot: Shot }>()
   font-size: var(--step--1);
   color: var(--graphite);
 }
+
+/*
+  Revealed as it scrolls into view. Browsers without scroll-driven animations,
+  print and reduced motion get the print as is.
+*/
+@media screen and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .shot__picture :deep(img) {
+      animation: shot-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes shot-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+  }
+}
 </style>

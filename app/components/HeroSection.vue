@@ -51,4 +51,53 @@ const t = useSiteContent()
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/*
+  Entrance, CSS only, done within 500ms. The title is the LCP element, so it
+  only rises and is never hidden; the proof, buttons and fields fade in after it.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .hero__title {
+    animation: hero-rise 300ms var(--ease) both;
+  }
+
+  .hero__proof,
+  .hero__main :deep(.btn-row),
+  .hero__fields > div {
+    animation: hero-in 300ms var(--ease) both;
+  }
+
+  .hero__proof {
+    animation-delay: 50ms;
+  }
+
+  .hero__main :deep(.btn-row) {
+    animation-delay: 100ms;
+  }
+
+  .hero__fields > div:nth-child(1) {
+    animation-delay: 130ms;
+  }
+
+  .hero__fields > div:nth-child(2) {
+    animation-delay: 160ms;
+  }
+
+  .hero__fields > div:nth-child(3) {
+    animation-delay: 190ms;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
 </style>

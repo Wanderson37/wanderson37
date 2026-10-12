@@ -99,15 +99,16 @@ ul {
   gap: 0 22px;
 }
 
+/* The underline is always there but transparent, so it can fade in on hover. */
 .site-nav a {
   display: inline-block;
   padding-block: 6px;
   font-size: 0.9375rem;
-  text-decoration: none;
+  text-decoration-color: transparent;
 }
 
 .site-nav a:hover {
-  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 
 .tools {

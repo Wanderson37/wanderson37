@@ -29,6 +29,9 @@
 
   --wide: 112%; /* font-stretch for headings */
 
+  --dur: 180ms; /* buttons, links, menu */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+
   --step--1: 0.875rem;
   --step-0: 1.0625rem;
   --step-1: 1.25rem;
@@ -333,6 +336,35 @@ pre,
 
 /* ---------- Motion ---------- */
 
+/*
+  Movement only for people who haven't asked to reduce it. Every animation and
+  transition sits inside a no-preference query, here or in the components (hero
+  entrance, print reveal, demo list), because shortening durations isn't enough:
+  an entrance with a delay would still hold elements hidden for that delay.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  .btn {
+    transition:
+      color var(--dur) var(--ease),
+      background-color var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease),
+      text-decoration-color var(--dur) var(--ease),
+      text-decoration-thickness var(--dur) var(--ease),
+      transform var(--dur) var(--ease);
+  }
+
+  /* Language switch and the other page changes (Nuxt's View Transitions). */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: var(--ease);
+  }
+}
+
+/* A safety net for anything that still moves (e.g. browser defaults). */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

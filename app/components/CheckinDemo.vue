@@ -110,13 +110,13 @@ function record() {
       </button>
     </div>
 
-    <ul class="demo__log" :aria-label="d.activity">
+    <TransitionGroup tag="ul" name="entry" class="demo__log" :aria-label="d.activity">
       <li v-for="entry in entries" :key="entry.id">
         <time>{{ entry.time }}</time>
         <span>{{ entry.kind === 'in' ? d.kinds.in : d.kinds.out }}</span>
         <StatusBadge :status="entry.status" :label="d.states[entry.status]" />
       </li>
-    </ul>
+    </TransitionGroup>
 
     <p class="demo__hint">{{ online ? d.hintOnline : d.hintOffline }}</p>
     <!-- Not a <noscript>: its content would be text on the client and break hydration. -->
@@ -130,7 +130,7 @@ function record() {
   border: 1px solid var(--graphite);
   border-top: 5px solid var(--synced);
   border-radius: 6px;
-  transition: border-color 0.25s;
+  transition: border-color var(--dur) var(--ease);
 }
 
 .demo.is-offline {
@@ -224,9 +224,38 @@ button:disabled {
 }
 
 .demo__log {
+  position: relative;
   margin-top: 16px;
   padding: 0 18px;
   list-style: none;
+}
+
+/* New entries slide in at the bottom; the oldest fades out at the top. */
+@media (prefers-reduced-motion: no-preference) {
+  .entry-enter-active,
+  .entry-leave-active,
+  .entry-move {
+    transition:
+      opacity 200ms var(--ease),
+      transform 200ms var(--ease);
+  }
+
+  .entry-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .entry-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  /* Out of the flow while leaving, so the rows below can move up into place. */
+  .entry-leave-active {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+  }
 }
 
 .demo__log li {

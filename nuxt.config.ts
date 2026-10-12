@@ -3,8 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-10-07',
   devtools: { enabled: false },
 
-  // Render 404.html with real content instead of an empty SPA shell.
-  experimental: { prerenderErrorPages: true },
+  experimental: {
+    // Render 404.html with real content instead of an empty SPA shell.
+    prerenderErrorPages: true,
+    // Cross-fade on page changes (the language switch, Home ↔ CV). Nuxt skips it
+    // under prefers-reduced-motion and for in-page anchors.
+    viewTransition: true
+  },
 
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/i18n'],
 
