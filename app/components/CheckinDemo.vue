@@ -14,7 +14,7 @@ interface Entry {
 }
 
 const t = useSiteContent()
-const d = computed(() => t.value.howIWork.demo)
+const d = computed(() => t.value.work.featured.demo)
 const { locale } = useI18n()
 
 const ready = ref(false)

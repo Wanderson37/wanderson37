@@ -48,6 +48,17 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
             <strong>{{ item.lead }}</strong> {{ item.text }}
           </li>
         </ul>
+
+        <div class="try">
+          <div class="try__text">
+            <h4 class="featured__subhead">{{ featured.tryDemo.title }}</h4>
+            <p>{{ featured.tryDemo.text }}</p>
+          </div>
+          <div>
+            <CheckinDemo />
+            <p class="try__note">{{ featured.tryDemo.caption }}</p>
+          </div>
+        </div>
       </article>
 
       <ul class="log">
@@ -140,6 +151,29 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
   font-stretch: var(--wide);
 }
 
+/* The demo next to a short explanation of the pattern. */
+.try {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px clamp(28px, 5vw, 64px);
+  align-items: start;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.try__text {
+  max-width: 52ch;
+}
+
+.try__text .featured__subhead {
+  margin-block: 0 12px;
+}
+
+.try__note {
+  margin-top: 10px;
+  font-size: var(--step--1);
+  color: var(--graphite);
+}
+
 /* ---------- Other work, as log rows ---------- */
 
 .log {
@@ -168,7 +202,8 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
 
 @media (max-width: 960px) {
   .featured__body,
-  .highlights {
+  .highlights,
+  .try {
     grid-template-columns: minmax(0, 1fr);
   }
 

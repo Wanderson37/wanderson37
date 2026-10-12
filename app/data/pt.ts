@@ -18,7 +18,7 @@ const pt: SiteContent = {
     navLabel: 'Principal',
     nav: {
       work: 'Trabalhos',
-      howIWork: 'Como trabalho',
+      workingWithMe: 'Trabalhar comigo',
       services: 'Serviços',
       about: 'Sobre',
       contact: 'Contato'
@@ -102,6 +102,30 @@ const pt: SiteContent = {
         alt: 'Job Schedule do MyAbseil na visão semanal: a equipe à esquerda, os dias da semana no centro e os serviços a agendar à direita',
         width: 1576,
         height: 944
+      },
+      tryDemo: {
+        title: 'Teste o check-in offline',
+        text: 'Líderes de equipe em campo não podem esperar o sinal voltar para registrar um check-in. Cada ação é salva primeiro no aparelho, entra na fila e sincroniza quando a conexão volta.',
+        caption: 'Uma simulação: nada sai do seu navegador e nada fica salvo.'
+      },
+      demo: {
+        title: 'Check-in em campo',
+        tag: 'Demo',
+        connection: 'Conexão',
+        online: 'Online',
+        offline: 'Offline',
+        statusOnline: 'Online. As alterações sincronizam na hora.',
+        statusOffline: 'Offline. As alterações esperam neste aparelho.',
+        checkIn: 'Fazer check-in',
+        checkOut: 'Fazer check-out',
+        activity: 'Atividade',
+        kinds: { in: 'Check-in', out: 'Check-out' },
+        states: { synced: 'Sincronizado', queued: 'Salvo no aparelho', syncing: 'Sincronizando…' },
+        hintOnline: 'Fique offline e faça um check-in ou check-out. O registro espera neste aparelho.',
+        hintOffline: 'Volte a ficar online para sincronizar o que está esperando.',
+        noJs: 'Ative o JavaScript para testar a demo.',
+        announceSaved: 'Salvo neste aparelho. Sincroniza quando você voltar a ficar online.',
+        announceSynced: 'Sincronizado.'
       }
     },
     others: [
@@ -127,45 +151,26 @@ const pt: SiteContent = {
     ]
   },
 
-  howIWork: {
-    title: 'Como trabalho',
-    intro: 'Três padrões que uso em produção, mostrados com exemplos pequenos escritos para este site.',
-    offline: {
-      title: 'Offline-first',
-      text: 'Líderes de equipe em campo não podem esperar o sinal voltar para registrar um check-in. Salvo cada ação primeiro no aparelho, coloco na fila e sincronizo quando a conexão volta.',
-      demoCaption: 'Uma simulação: nada sai do seu navegador e nada fica salvo.',
-      codeCaption: 'O padrão com Dexie: grava localmente, marca como pendente e sincroniza quando há conexão.'
-    },
-    pdf: {
-      title: 'PDFs no navegador',
-      text: 'Gerar PDFs no cliente tira esse trabalho do servidor: menos carga lá e menos relatórios com falha. O botão Baixar currículo deste site funciona assim.',
-      codeCaption: 'Uma versão resumida do código desse botão.'
-    },
-    components: {
-      title: 'Do Figma a componentes reutilizáveis',
-      text: 'Transformo o Figma do designer em componentes pequenos com props claras, para que todas as telas usem as mesmas peças. O selo de status da demo acima é um deles.',
-      componentCaption: 'StatusBadge.vue',
-      usageCaption: 'Como usar'
-    },
-    demo: {
-      title: 'Check-in em campo',
-      tag: 'Demo',
-      connection: 'Conexão',
-      online: 'Online',
-      offline: 'Offline',
-      statusOnline: 'Online. As alterações sincronizam na hora.',
-      statusOffline: 'Offline. As alterações esperam neste aparelho.',
-      checkIn: 'Fazer check-in',
-      checkOut: 'Fazer check-out',
-      activity: 'Atividade',
-      kinds: { in: 'Check-in', out: 'Check-out' },
-      states: { synced: 'Sincronizado', queued: 'Salvo no aparelho', syncing: 'Sincronizando…' },
-      hintOnline: 'Fique offline e faça um check-in ou check-out. O registro espera neste aparelho.',
-      hintOffline: 'Volte a ficar online para sincronizar o que está esperando.',
-      noJs: 'Ative o JavaScript para testar a demo.',
-      announceSaved: 'Salvo neste aparelho. Sincroniza quando você voltar a ficar online.',
-      announceSynced: 'Sincronizado.'
-    }
+  workingWithMe: {
+    title: 'Como é trabalhar comigo',
+    items: [
+      {
+        lead: 'Do Figma à produção.',
+        text: 'Transformo o Figma do designer em componentes reutilizáveis e levo até a produção, como no MyAbseil e no PathDMS.'
+      },
+      {
+        lead: 'No ritmo do seu time.',
+        text: 'Entrego conforme a demanda: fico no chat quando o time trabalha assim, ou mando uma atualização quando há algo para mostrar. Hoje trabalho pelo Slack e respondo rápido às mensagens.'
+      },
+      {
+        lead: 'Testado antes de entregar.',
+        text: 'Escrevo testes end-to-end com Cypress, para que as mudanças sejam verificadas antes de chegar aos usuários.'
+      },
+      {
+        lead: 'Código feito para ser mantido.',
+        text: 'Componentes reutilizáveis e a lógica de API centralizada em stores Pinia deixam o código fácil de mudar e de passar adiante.'
+      }
+    ]
   },
 
   services: {

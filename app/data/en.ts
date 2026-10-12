@@ -18,7 +18,7 @@ const en: SiteContent = {
     navLabel: 'Main',
     nav: {
       work: 'Work',
-      howIWork: 'How I work',
+      workingWithMe: 'Working with me',
       services: 'Services',
       about: 'About',
       contact: 'Contact'
@@ -102,6 +102,30 @@ const en: SiteContent = {
         alt: 'MyAbseil Job Schedule in week view: operatives on the left, the days of the week in the middle and jobs waiting to be scheduled on the right',
         width: 1576,
         height: 944
+      },
+      tryDemo: {
+        title: 'Try the offline check-in',
+        text: 'Team leads in the field can’t wait for a signal to log a check-in. Each action is saved on the device first, queued, and synced when the connection comes back.',
+        caption: 'A simulation: nothing leaves your browser and nothing is stored.'
+      },
+      demo: {
+        title: 'Site check-in',
+        tag: 'Demo',
+        connection: 'Connection',
+        online: 'Online',
+        offline: 'Offline',
+        statusOnline: 'Online. Changes sync right away.',
+        statusOffline: 'Offline. Changes wait on this device.',
+        checkIn: 'Check in',
+        checkOut: 'Check out',
+        activity: 'Activity',
+        kinds: { in: 'Check-in', out: 'Check-out' },
+        states: { synced: 'Synced', queued: 'Saved on device', syncing: 'Syncing…' },
+        hintOnline: 'Go offline, then check in or out. The entry waits on this device.',
+        hintOffline: 'Go back online to sync what is waiting.',
+        noJs: 'Turn on JavaScript to try the demo.',
+        announceSaved: 'Saved on this device. It syncs when you are back online.',
+        announceSynced: 'Synced.'
       }
     },
     others: [
@@ -127,45 +151,26 @@ const en: SiteContent = {
     ]
   },
 
-  howIWork: {
-    title: 'How I work',
-    intro: 'Three patterns I use in production, shown with small examples written for this site.',
-    offline: {
-      title: 'Offline-first',
-      text: 'Team leads in the field can’t wait for a signal to log a check-in. I save each action on the device first, queue it, and sync when the connection comes back.',
-      demoCaption: 'A simulation: nothing leaves your browser and nothing is stored.',
-      codeCaption: 'The pattern with Dexie: write locally, mark as pending, sync when online.'
-    },
-    pdf: {
-      title: 'PDFs in the browser',
-      text: 'Building PDFs on the client takes that work off the server: less load there and fewer failed reports. The Download CV button on this site works this way.',
-      codeCaption: 'A trimmed version of the code behind that button.'
-    },
-    components: {
-      title: 'From Figma to reusable components',
-      text: 'I turn a designer’s Figma into small components with clear props, so every screen uses the same pieces. The status badge in the demo above is one of them.',
-      componentCaption: 'StatusBadge.vue',
-      usageCaption: 'Using it'
-    },
-    demo: {
-      title: 'Site check-in',
-      tag: 'Demo',
-      connection: 'Connection',
-      online: 'Online',
-      offline: 'Offline',
-      statusOnline: 'Online. Changes sync right away.',
-      statusOffline: 'Offline. Changes wait on this device.',
-      checkIn: 'Check in',
-      checkOut: 'Check out',
-      activity: 'Activity',
-      kinds: { in: 'Check-in', out: 'Check-out' },
-      states: { synced: 'Synced', queued: 'Saved on device', syncing: 'Syncing…' },
-      hintOnline: 'Go offline, then check in or out. The entry waits on this device.',
-      hintOffline: 'Go back online to sync what is waiting.',
-      noJs: 'Turn on JavaScript to try the demo.',
-      announceSaved: 'Saved on this device. It syncs when you are back online.',
-      announceSynced: 'Synced.'
-    }
+  workingWithMe: {
+    title: 'Working with me',
+    items: [
+      {
+        lead: 'From Figma to production.',
+        text: 'I turn the designer’s Figma into reusable components and take them all the way to production, as on MyAbseil and PathDMS.'
+      },
+      {
+        lead: 'In step with your team.',
+        text: 'I deliver as the work demands: staying in the chat when the team works that way, or sending an update when there is something to show. I work in Slack today and reply to messages quickly.'
+      },
+      {
+        lead: 'Tested before delivery.',
+        text: 'I write end-to-end tests with Cypress, so changes are checked before they reach users.'
+      },
+      {
+        lead: 'Code built to be maintained.',
+        text: 'Reusable components and API logic centralized in Pinia stores keep the codebase easy to change and to hand over.'
+      }
+    ]
   },
 
   services: {

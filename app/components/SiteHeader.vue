@@ -8,7 +8,7 @@ const home = computed(() => localePath('/'))
 
 const sections = computed(() => [
   { id: 'work', label: t.value.ui.nav.work },
-  { id: 'how-i-work', label: t.value.ui.nav.howIWork },
+  { id: 'working-with-me', label: t.value.ui.nav.workingWithMe },
   { id: 'services', label: t.value.ui.nav.services },
   { id: 'about', label: t.value.ui.nav.about },
   { id: 'contact', label: t.value.ui.nav.contact }

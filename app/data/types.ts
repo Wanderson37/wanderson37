@@ -21,6 +21,26 @@ export interface WorkRow {
 
 export type CheckinStatus = 'synced' | 'queued' | 'syncing'
 
+export interface DemoCopy {
+  title: string
+  tag: string
+  connection: string
+  online: string
+  offline: string
+  statusOnline: string
+  statusOffline: string
+  checkIn: string
+  checkOut: string
+  activity: string
+  kinds: { in: string; out: string }
+  states: Record<CheckinStatus, string>
+  hintOnline: string
+  hintOffline: string
+  noJs: string
+  announceSaved: string
+  announceSynced: string
+}
+
 export interface CvJob {
   role: string
   org: string
@@ -64,7 +84,7 @@ export interface SiteContent {
   ui: {
     skipLink: string
     navLabel: string
-    nav: { work: string; howIWork: string; services: string; about: string; contact: string }
+    nav: { work: string; workingWithMe: string; services: string; about: string; contact: string }
     languageLabel: string
     emailMe: string
     upwork: string
@@ -89,34 +109,14 @@ export interface SiteContent {
       highlightsTitle: string
       highlights: Highlight[]
       image: { src: string; alt: string; width: number; height: number }
+      tryDemo: { title: string; text: string; caption: string }
+      demo: DemoCopy
     }
     others: WorkRow[]
   }
-  howIWork: {
+  workingWithMe: {
     title: string
-    intro: string
-    offline: { title: string; text: string; demoCaption: string; codeCaption: string }
-    pdf: { title: string; text: string; codeCaption: string }
-    components: { title: string; text: string; componentCaption: string; usageCaption: string }
-    demo: {
-      title: string
-      tag: string
-      connection: string
-      online: string
-      offline: string
-      statusOnline: string
-      statusOffline: string
-      checkIn: string
-      checkOut: string
-      activity: string
-      kinds: { in: string; out: string }
-      states: Record<CheckinStatus, string>
-      hintOnline: string
-      hintOffline: string
-      noJs: string
-      announceSaved: string
-      announceSynced: string
-    }
+    items: Highlight[]
   }
   services: {
     title: string
