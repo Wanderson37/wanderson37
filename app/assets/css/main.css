@@ -276,18 +276,7 @@ pre,
 @media print {
   .site-header,
   .site-footer,
-  /* Shown only when JavaScript is off (e.g. the demo's "turn on JavaScript" hint). */
-.no-scripting-only {
-  display: none;
-}
-
-@media (scripting: none) {
-  .no-scripting-only {
-    display: block;
-  }
-}
-
-.skip-link {
+  .skip-link {
     display: none !important;
   }
 
