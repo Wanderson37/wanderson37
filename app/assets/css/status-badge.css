@@ -1,4 +1,4 @@
-/* Styles for StatusBadge.vue, kept here so the component shown on the site stays short. */
+/* Styles for StatusBadge.vue (the badges in the check-in demo). */
 
 .status-badge {
   display: inline-flex;
