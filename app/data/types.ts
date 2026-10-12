@@ -12,11 +12,20 @@ export interface Highlight {
   text: string
 }
 
+export interface Shot {
+  src: string
+  alt: string
+  width: number
+  height: number
+  caption: string
+}
+
 export interface WorkRow {
   name: string
   period: string
   summary: string
   href?: string
+  shot?: Shot
 }
 
 export type CheckinStatus = 'synced' | 'queued' | 'syncing'
@@ -108,7 +117,8 @@ export interface SiteContent {
       fields: Field[]
       highlightsTitle: string
       highlights: Highlight[]
-      image: { src: string; alt: string; width: number; height: number }
+      /** The first one opens the block; the rest follow the highlights. */
+      shots: [Shot, ...Shot[]]
       tryDemo: { title: string; text: string; caption: string }
       demo: DemoCopy
     }

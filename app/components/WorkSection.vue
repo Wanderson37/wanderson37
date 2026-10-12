@@ -17,30 +17,19 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
         </header>
         <p class="featured__summary">{{ featured.summary }}</p>
 
-        <div class="featured__body">
-          <NuxtPicture
-            class="featured__shot"
-            :src="featured.image.src"
-            :alt="featured.image.alt"
-            :width="featured.image.width"
-            :height="featured.image.height"
-            format="avif,webp"
-            sizes="sm:100vw md:100vw lg:620px"
-            loading="lazy"
-          />
+        <WorkShot :shot="featured.shots[0]" />
 
-          <dl class="fields">
-            <div v-for="field in featured.fields" :key="field.label">
-              <dt>{{ field.label }}</dt>
-              <dd>
-                <a v-if="field.href" :href="field.href" target="_blank" rel="noopener">
-                  {{ field.value }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
-                </a>
-                <template v-else>{{ field.value }}</template>
-              </dd>
-            </div>
-          </dl>
-        </div>
+        <dl class="fields featured__fields">
+          <div v-for="field in featured.fields" :key="field.label">
+            <dt>{{ field.label }}</dt>
+            <dd>
+              <a v-if="field.href" :href="field.href" target="_blank" rel="noopener">
+                {{ field.value }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
+              </a>
+              <template v-else>{{ field.value }}</template>
+            </dd>
+          </div>
+        </dl>
 
         <h4 class="featured__subhead">{{ featured.highlightsTitle }}</h4>
         <ul class="highlights">
@@ -48,6 +37,8 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
             <strong>{{ item.lead }}</strong> {{ item.text }}
           </li>
         </ul>
+
+        <WorkShot v-for="shot in featured.shots.slice(1)" :key="shot.src" :shot="shot" class="featured__more" />
 
         <div class="try">
           <div class="try__text">
@@ -69,6 +60,7 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
           <a v-if="row.href" class="log__link" :href="row.href" target="_blank" rel="noopener">
             {{ domain(row.href) }}<span class="visually-hidden">{{ ` ${t.ui.newTab}` }}</span>
           </a>
+          <WorkShot v-if="row.shot" :shot="row.shot" class="log__shot" />
         </li>
       </ul>
     </div>
@@ -108,22 +100,19 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
   font-size: var(--step-1);
 }
 
-.featured__body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 32px clamp(24px, 4vw, 48px);
-  align-items: start;
+/* Role, Used in, Stack and Live in two columns under the first print. */
+.featured__fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 48px);
+  margin-top: clamp(24px, 3vw, 32px);
 }
 
-.featured__shot :deep(img) {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-}
-
-.featured .fields > div:last-child {
+.featured__fields > div:nth-last-child(-n + 2) {
   border-bottom: 1px solid var(--rule);
+}
+
+.featured__more {
+  margin-top: clamp(36px, 5vw, 56px);
 }
 
 .featured__subhead {
@@ -200,11 +189,20 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
   max-width: var(--measure);
 }
 
+.log__shot {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+}
+
 @media (max-width: 960px) {
-  .featured__body,
+  .featured__fields,
   .highlights,
   .try {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featured__fields > div:nth-last-child(2) {
+    border-bottom: 0;
   }
 
   .log__row {

@@ -97,12 +97,22 @@ const pt: SiteContent = {
           text: 'Ponto de contato para demonstrações do produto e pré-venda.'
         }
       ],
-      image: {
-        src: '/images/myabseil-schedule.png',
-        alt: 'Job Schedule do MyAbseil na visão semanal: a equipe à esquerda, os dias da semana no centro e os serviços a agendar à direita',
-        width: 1576,
-        height: 944
-      },
+      shots: [
+        {
+          src: '/images/myabseil-schedule.png',
+          alt: 'Job Schedule do MyAbseil na visão semanal: a equipe à esquerda, os dias da semana no centro e os serviços a agendar à direita',
+          width: 1576,
+          height: 944,
+          caption: 'O Job Schedule, uma das telas cuja UX redesenhei.'
+        },
+        {
+          src: '/images/myabseil-landing.png',
+          alt: 'Site de marketing do MyAbseil: o título “One app for rope access operations & compliance” acima de cards de alocação de serviços, formulários digitais, assinatura e equipamentos',
+          width: 1584,
+          height: 938,
+          caption: 'O site de marketing, feito com Nuxt.js e Tailwind.'
+        }
+      ],
       tryDemo: {
         title: 'Teste o check-in offline',
         text: 'Líderes de equipe em campo não podem esperar o sinal voltar para registrar um check-in. Cada ação é salva primeiro no aparelho, entra na fila e sincroniza quando a conexão volta.',
@@ -141,7 +151,14 @@ const pt: SiteContent = {
         period: 'mar 2025 – atual',
         summary:
           'Loja virtual completa para uma empresa de gravatas. Front-end em Vue, Pinia e Quasar sobre um back-end Laravel, com pagamentos pelo Mercado Pago, cotação de frete pelo Melhor Envio e e-mails transacionais pelo Brevo.',
-        href: links.cwgravatas
+        href: links.cwgravatas,
+        shot: {
+          src: '/images/cw-gravatas-admin.png',
+          alt: 'Painel administrativo da CW Gravatas: métricas de produtos, pedidos e vendas, ações rápidas e alertas de estoque baixo',
+          width: 1577,
+          height: 939,
+          caption: 'O painel administrativo da loja. Os números de vendas e estoque estão borrados.'
+        }
       },
       {
         name: 'PIB Búzios',

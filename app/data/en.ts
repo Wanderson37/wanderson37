@@ -97,12 +97,22 @@ const en: SiteContent = {
           text: 'Point of contact for product demos and pre-sales.'
         }
       ],
-      image: {
-        src: '/images/myabseil-schedule.png',
-        alt: 'MyAbseil Job Schedule in week view: operatives on the left, the days of the week in the middle and jobs waiting to be scheduled on the right',
-        width: 1576,
-        height: 944
-      },
+      shots: [
+        {
+          src: '/images/myabseil-schedule.png',
+          alt: 'MyAbseil Job Schedule in week view: operatives on the left, the days of the week in the middle and jobs waiting to be scheduled on the right',
+          width: 1576,
+          height: 944,
+          caption: 'The Job Schedule, one of the screens whose UX I redesigned.'
+        },
+        {
+          src: '/images/myabseil-landing.png',
+          alt: 'MyAbseil marketing site: the headline “One app for rope access operations & compliance” above cards for job allocation, digital forms, signatures and equipment',
+          width: 1584,
+          height: 938,
+          caption: 'The marketing site, built with Nuxt.js and Tailwind.'
+        }
+      ],
       tryDemo: {
         title: 'Try the offline check-in',
         text: 'Team leads in the field can’t wait for a signal to log a check-in. Each action is saved on the device first, queued, and synced when the connection comes back.',
@@ -141,7 +151,14 @@ const en: SiteContent = {
         period: 'Mar 2025 – present',
         summary:
           'Complete online store for a necktie business. Front-end in Vue, Pinia and Quasar on a Laravel back-end, with Mercado Pago payments, Melhor Envio shipping quotes and Brevo transactional emails.',
-        href: links.cwgravatas
+        href: links.cwgravatas,
+        shot: {
+          src: '/images/cw-gravatas-admin.png',
+          alt: 'CW Gravatas admin dashboard: product, order and sales metrics, quick actions and low-stock alerts',
+          width: 1577,
+          height: 939,
+          caption: 'The store’s admin dashboard. Sales and stock figures are blurred.'
+        }
       },
       {
         name: 'PIB Búzios',
