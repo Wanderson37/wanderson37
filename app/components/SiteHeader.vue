@@ -18,6 +18,12 @@ const languages = [
   { code: 'en', short: 'EN', name: 'English', lang: 'en' },
   { code: 'pt', short: 'PT', name: 'Português', lang: 'pt-BR' }
 ] as const
+
+// Path only: switchLocalePath keeps the current #hash and ?query, which the
+// prerendered HTML can't know, so the client render didn't match it on
+// hydration (e.g. opening /#work).
+const languagePath = (code: (typeof languages)[number]['code']) =>
+  switchLocalePath(code).replace(/[?#].*$/, '')
 </script>
 
 <template>
@@ -37,7 +43,7 @@ const languages = [
         <ul>
           <li v-for="language in languages" :key="language.code">
             <NuxtLink
-              :to="switchLocalePath(language.code)"
+              :to="languagePath(language.code)"
               :lang="language.lang"
               :hreflang="language.lang"
               :aria-current="language.code === locale ? 'true' : undefined"

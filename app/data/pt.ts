@@ -98,10 +98,10 @@ const pt: SiteContent = {
         }
       ],
       image: {
-        src: '/images/myabseil-reports.png',
-        alt: 'Módulo de relatórios do MyAbseil',
-        width: 1600,
-        height: 1000
+        src: '/images/myabseil-schedule.png',
+        alt: 'Job Schedule do MyAbseil na visão semanal: a equipe à esquerda, os dias da semana no centro e os serviços a agendar à direita',
+        width: 1576,
+        height: 944
       }
     },
     others: [

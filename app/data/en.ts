@@ -98,10 +98,10 @@ const en: SiteContent = {
         }
       ],
       image: {
-        src: '/images/myabseil-reports.png',
-        alt: 'MyAbseil reports module',
-        width: 1600,
-        height: 1000
+        src: '/images/myabseil-schedule.png',
+        alt: 'MyAbseil Job Schedule in week view: operatives on the left, the days of the week in the middle and jobs waiting to be scheduled on the right',
+        width: 1576,
+        height: 944
       }
     },
     others: [
