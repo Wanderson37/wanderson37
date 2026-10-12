@@ -3,7 +3,7 @@ const t = useSiteContent()
 </script>
 
 <template>
-  <section id="working-with-me" class="section" aria-labelledby="working-title">
+  <section id="working-with-me" class="section band" aria-labelledby="working-title">
     <div class="container split">
       <h2 id="working-title" class="section-title">{{ t.workingWithMe.title }}</h2>
       <ul class="working">

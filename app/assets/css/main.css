@@ -11,7 +11,8 @@
   --graphite: #545d68; /* labels, secondary text, control borders - 6.2:1 */
   --rule: #d3d8de; /* hairlines, decorative only */
   --signal: #e35205; /* primary button (ink text, 4.65:1), offline state */
-  --synced: #1b7f4c; /* "synced" state, strings in code - 4.64:1 */
+  --synced: #1b7f4c; /* "synced" state text - 4.64:1 */
+  --on-signal: #14181d; /* primary button text: stays dark wherever the button sits */
 
   --wide: 112%; /* font-stretch for headings */
 
@@ -132,6 +133,29 @@ pre,
   max-width: var(--measure);
 }
 
+/*
+  Full-width Ink bands (Working with me, Contact and the footer). Inside a band
+  the six tokens take their dark values, so every component inverts on its own.
+  Contrast of each pair: text 14.6:1, graphite 6.4:1, synced 6.6:1, button
+  text on signal 5.6:1.
+*/
+.band {
+  --paper: #14181d;
+  --ink: #e6e9ec;
+  --graphite: #949ca7;
+  --rule: #323941;
+  --signal: #f0641a;
+  --synced: #45b07a;
+
+  color-scheme: dark;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.band.section {
+  border-top: 0;
+}
+
 /* Title on the left, content on the right (Services, About). */
 .split {
   display: grid;
@@ -211,6 +235,11 @@ pre,
 .btn--primary {
   background: var(--signal);
   border-color: var(--signal);
+  color: var(--on-signal);
+}
+
+.btn--primary:hover {
+  box-shadow: inset 0 -3px 0 var(--on-signal);
 }
 
 .btn[aria-busy='true'] {

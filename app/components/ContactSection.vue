@@ -8,7 +8,7 @@ const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(
 </script>
 
 <template>
-  <section id="contact" class="section contact" aria-labelledby="contact-title">
+  <section id="contact" class="section band contact" aria-labelledby="contact-title">
     <div class="container">
       <h2 id="contact-title" class="contact__title">{{ t.contact.title }}</h2>
       <p class="contact__text">{{ t.contact.text }}</p>
@@ -45,10 +45,6 @@ const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(
 </template>
 
 <style scoped>
-.contact {
-  border-top: 2px solid var(--ink);
-}
-
 .contact__title {
   font-size: var(--step-4);
 }
