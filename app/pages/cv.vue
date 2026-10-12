@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// A document to read and print: always in the light theme.
+definePageMeta({ themeLock: true })
+
 const t = useSiteContent()
 const cv = computed(() => t.value.cv)
 

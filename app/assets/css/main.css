@@ -14,6 +14,19 @@
   --synced: #1b7f4c; /* "synced" state text - 4.64:1 */
   --on-signal: #14181d; /* primary button text: stays dark wherever the button sits */
 
+  /*
+    The same six tokens for a dark background: same hues, only lightness moves.
+    Used by the dark theme and by the Ink bands in both themes. On paper-dark:
+    ink 14.6:1, graphite 6.4:1, synced 6.6:1, on-signal on signal 5.6:1.
+  */
+  --paper-dark: #14181d;
+  --ink-dark: #e6e9ec;
+  --graphite-dark: #949ca7;
+  --rule-dark: #323941;
+  --signal-dark: #f0641a;
+  --synced-dark: #45b07a;
+  --band: var(--paper-dark); /* Ink in the light theme; a step above the background in the dark one */
+
   --wide: 112%; /* font-stretch for headings */
 
   --step--1: 0.875rem;
@@ -30,6 +43,41 @@
   --radius: 4px;
 
   color-scheme: light;
+}
+
+/*
+  Dark theme. It follows the system unless the visitor picked a theme with the
+  header button (data-theme, set before the first paint by the inline script
+  in nuxt.config). Pages with data-theme-lock (the CV) stay light, and print
+  never matches `screen`, so it stays light too. The block is repeated because
+  one selector can't express "system dark, or picked dark".
+*/
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme-lock]) {
+    --paper: var(--paper-dark);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
+    --band: #1e2329;
+
+    color-scheme: dark;
+  }
+}
+
+@media screen {
+  :root[data-theme='dark']:not([data-theme-lock]) {
+    --paper: var(--paper-dark);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
+    --band: #1e2329;
+
+    color-scheme: dark;
+  }
 }
 
 /* ---------- Base ---------- */
@@ -135,25 +183,24 @@ pre,
 
 /*
   Full-width Ink bands (Working with me, Contact and the footer). Inside a band
-  the six tokens take their dark values, so every component inverts on its own.
-  Contrast of each pair: text 14.6:1, graphite 6.4:1, synced 6.6:1, button
-  text on signal 5.6:1.
+  the tokens take their dark values, so every component inverts on its own.
+  In the dark theme the band is only 1.13:1 from the background, so the
+  section's top rule (rule-dark here) is what marks its edge. Printed pages
+  skip this and stay light.
 */
-.band {
-  --paper: #14181d;
-  --ink: #e6e9ec;
-  --graphite: #949ca7;
-  --rule: #323941;
-  --signal: #f0641a;
-  --synced: #45b07a;
+@media screen {
+  .band {
+    --paper: var(--band);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
 
-  color-scheme: dark;
-  background: var(--paper);
-  color: var(--ink);
-}
-
-.band.section {
-  border-top: 0;
+    color-scheme: dark;
+    background: var(--paper);
+    color: var(--ink);
+  }
 }
 
 /* Title on the left, content on the right (Services, About). */
@@ -188,6 +235,11 @@ pre,
 @media (scripting: none) {
   .no-scripting-only {
     display: block;
+  }
+
+  /* !important: components set their own display, and this has to win. */
+  .needs-js {
+    display: none !important;
   }
 }
 

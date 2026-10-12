@@ -17,7 +17,16 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
       ],
-      meta: [{ name: 'theme-color', content: '#f5f6f7' }]
+      script: [
+        {
+          // Applies the theme the visitor picked before the first paint, so there is
+          // no flash of the wrong one, prerendered HTML included. Without a pick, the
+          // CSS follows the system. Locked pages (the CV) are left alone.
+          innerHTML:
+            "(function(){var d=document.documentElement,t;if(d.hasAttribute('data-theme-lock'))return;try{t=localStorage.getItem('theme')}catch(e){}if(t==='light'||t==='dark')d.setAttribute('data-theme',t)})()",
+          tagPriority: 'critical'
+        }
+      ]
     }
   },
 

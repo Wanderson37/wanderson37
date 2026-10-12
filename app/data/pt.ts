@@ -24,6 +24,7 @@ const pt: SiteContent = {
       contact: 'Contato'
     },
     languageLabel: 'Idioma',
+    darkTheme: 'Tema escuro',
     emailMe: 'Enviar e-mail',
     upwork: 'Upwork',
     downloadCv: 'Baixar currículo',

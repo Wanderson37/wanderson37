@@ -24,6 +24,7 @@ const en: SiteContent = {
       contact: 'Contact'
     },
     languageLabel: 'Language',
+    darkTheme: 'Dark theme',
     emailMe: 'Email me',
     upwork: 'Upwork',
     downloadCv: 'Download CV',

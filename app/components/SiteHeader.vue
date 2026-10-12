@@ -3,6 +3,7 @@ const t = useSiteContent()
 const { locale } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
+const route = useRoute()
 
 const home = computed(() => localePath('/'))
 
@@ -39,20 +40,23 @@ const languagePath = (code: (typeof languages)[number]['code']) =>
         </ul>
       </nav>
 
-      <nav :aria-label="t.ui.languageLabel" class="lang">
-        <ul>
-          <li v-for="language in languages" :key="language.code">
-            <NuxtLink
-              :to="languagePath(language.code)"
-              :lang="language.lang"
-              :hreflang="language.lang"
-              :aria-current="language.code === locale ? 'true' : undefined"
-            >
-              {{ language.short }}<span class="visually-hidden">, {{ language.name }}</span>
-            </NuxtLink>
-          </li>
-        </ul>
-      </nav>
+      <div class="tools">
+        <ThemeToggle v-if="!route.meta.themeLock" />
+        <nav :aria-label="t.ui.languageLabel" class="lang">
+          <ul>
+            <li v-for="language in languages" :key="language.code">
+              <NuxtLink
+                :to="languagePath(language.code)"
+                :lang="language.lang"
+                :hreflang="language.lang"
+                :aria-current="language.code === locale ? 'true' : undefined"
+              >
+                {{ language.short }}<span class="visually-hidden">, {{ language.name }}</span>
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 </template>
@@ -106,8 +110,11 @@ ul {
   text-decoration: underline;
 }
 
-.lang {
+.tools {
   grid-area: lang;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .lang ul {

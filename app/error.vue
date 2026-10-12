@@ -7,13 +7,15 @@ const t = useSiteContent()
 const { locale } = useI18n()
 const localePath = useLocalePath()
 
+const { picked } = useTheme()
+
 const notFound = computed(() => props.error.statusCode === 404)
 const title = computed(() => (notFound.value ? t.value.notFound.title : t.value.notFound.errorTitle))
 
 useHead(() => ({
   htmlAttrs: { lang: locale.value === 'pt' ? 'pt-BR' : 'en' },
   title: `${title.value} — Wanderson Oliveira`,
-  meta: [{ name: 'robots', content: 'noindex' }]
+  meta: [{ name: 'robots', content: 'noindex' }, ...themeColorMeta(picked.value)]
 }))
 </script>
 

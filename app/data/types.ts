@@ -95,6 +95,7 @@ export interface SiteContent {
     navLabel: string
     nav: { work: string; workingWithMe: string; services: string; about: string; contact: string }
     languageLabel: string
+    darkTheme: string
     emailMe: string
     upwork: string
     downloadCv: string
