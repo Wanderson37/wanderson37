@@ -31,6 +31,7 @@
 
   --dur: 180ms; /* buttons, links, menu */
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --in: 40px; /* how far blocks travel when they assemble on scroll */
 
   --step--1: 0.875rem;
   --step-0: 1.0625rem;
@@ -163,6 +164,21 @@ pre,
 }
 
 /* ---------- Layout ---------- */
+
+/*
+  Blocks slide in from the sides (see Motion), so main clips sideways overflow.
+  `clip`, not `hidden`: it doesn't create a scroll container, so the scroll
+  timelines keep following the page.
+*/
+main {
+  overflow-x: clip;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --in: 16px;
+  }
+}
 
 .container {
   max-width: var(--max);
@@ -361,6 +377,54 @@ pre,
   ::view-transition-new(root) {
     animation-duration: 200ms;
     animation-timing-function: var(--ease);
+  }
+}
+
+/*
+  Blocks after the hero assemble as they scroll in: .in-left and .in-right
+  slide in from their side, .in-row draws a label/value row from left to
+  right, hairline included. Each block is in place 220px of scroll after it
+  appears, however tall it is. Progress follows the scroll position, not a timer,
+  so jumping to a section shows it already assembled. `backwards` leaves no
+  transform or clip once a block is in, which keeps focus rings unclipped.
+  Browsers without scroll-driven animations, print and reduced motion get the
+  blocks as they are.
+*/
+.in-left {
+  --in-x: calc(var(--in) * -1);
+}
+
+.in-right {
+  --in-x: var(--in);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .in-left,
+    .in-right {
+      animation: in-side linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+
+    .in-row {
+      animation: in-row linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+  }
+}
+
+@keyframes in-side {
+  from {
+    opacity: 0;
+    transform: translateX(var(--in-x));
+  }
+}
+
+@keyframes in-row {
+  from {
+    clip-path: inset(0 100% 0 0);
   }
 }
 

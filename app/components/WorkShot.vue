@@ -35,16 +35,44 @@ defineProps<{ shot: Shot }>()
 }
 
 /*
-  Revealed as it scrolls into view. Browsers without scroll-driven animations,
-  print and reduced motion get the print as is.
+  Revealed as it scrolls into view, then a light parallax: the whole figure
+  drifts against the scroll while it crosses the screen, so the print moves a
+  little slower than the text around it. Browsers without scroll-driven
+  animations, print and reduced motion get the print as is.
 */
+.shot {
+  --drift: 48px;
+}
+
+@media (max-width: 760px) {
+  .shot {
+    --drift: 20px;
+  }
+}
+
 @media screen and (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
+    .shot {
+      animation: shot-drift linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
     .shot__picture :deep(img) {
       animation: shot-reveal linear both;
       animation-timeline: view();
       animation-range: entry 0% entry 60%;
     }
+  }
+}
+
+@keyframes shot-drift {
+  from {
+    transform: translateY(var(--drift));
+  }
+
+  to {
+    transform: translateY(calc(var(--drift) * -1));
   }
 }
 

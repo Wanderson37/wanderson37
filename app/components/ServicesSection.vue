@@ -5,9 +5,9 @@ const t = useSiteContent()
 <template>
   <section id="services" class="section" aria-labelledby="services-title">
     <div class="container split">
-      <h2 id="services-title" class="section-title">{{ t.services.title }}</h2>
+      <h2 id="services-title" class="section-title in-left">{{ t.services.title }}</h2>
       <ul class="services">
-        <li v-for="item in t.services.items" :key="item">{{ item }}</li>
+        <li v-for="item in t.services.items" :key="item" class="in-right">{{ item }}</li>
       </ul>
     </div>
   </section>

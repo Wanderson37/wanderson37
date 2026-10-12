@@ -8,19 +8,19 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
 <template>
   <section id="work" class="section" aria-labelledby="work-title">
     <div class="container">
-      <h2 id="work-title" class="section-title">{{ t.work.title }}</h2>
+      <h2 id="work-title" class="section-title in-left">{{ t.work.title }}</h2>
 
       <article class="featured" aria-labelledby="featured-title">
-        <header class="featured__head">
+        <header class="featured__head in-left">
           <h3 id="featured-title" class="featured__name">{{ featured.name }}</h3>
           <p class="period">{{ featured.period }}</p>
         </header>
-        <p class="featured__summary">{{ featured.summary }}</p>
+        <p class="featured__summary in-left">{{ featured.summary }}</p>
 
         <WorkShot :shot="featured.shots[0]" />
 
         <dl class="fields featured__fields">
-          <div v-for="field in featured.fields" :key="field.label">
+          <div v-for="field in featured.fields" :key="field.label" class="in-row">
             <dt>{{ field.label }}</dt>
             <dd>
               <a v-if="field.href" :href="field.href" target="_blank" rel="noopener">
@@ -31,9 +31,10 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
           </div>
         </dl>
 
-        <h4 class="featured__subhead">{{ featured.highlightsTitle }}</h4>
+        <h4 class="featured__subhead in-left">{{ featured.highlightsTitle }}</h4>
         <ul class="highlights">
-          <li v-for="item in featured.highlights" :key="item.lead">
+          <!-- Two columns: each side comes in from its own edge. -->
+          <li v-for="(item, i) in featured.highlights" :key="item.lead" :class="i % 2 ? 'in-right' : 'in-left'">
             <strong>{{ item.lead }}</strong> {{ item.text }}
           </li>
         </ul>
@@ -41,11 +42,11 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
         <WorkShot v-for="shot in featured.shots.slice(1)" :key="shot.src" :shot="shot" class="featured__more" />
 
         <div class="try">
-          <div class="try__text">
+          <div class="try__text in-left">
             <h4 class="featured__subhead">{{ featured.tryDemo.title }}</h4>
             <p>{{ featured.tryDemo.text }}</p>
           </div>
-          <div>
+          <div class="in-right">
             <CheckinDemo />
             <p class="try__note">{{ featured.tryDemo.caption }}</p>
           </div>
@@ -53,7 +54,7 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
       </article>
 
       <ul class="log">
-        <li v-for="row in t.work.others" :key="row.name" class="log__row">
+        <li v-for="row in t.work.others" :key="row.name" class="log__row in-left">
           <h3 class="log__name">{{ row.name }}</h3>
           <p class="period">{{ row.period }}</p>
           <p class="log__summary">{{ row.summary }}</p>
@@ -195,6 +196,11 @@ const domain = (href: string) => new URL(href).hostname.replace(/^www\./, '')
 }
 
 @media (max-width: 960px) {
+  /* One column: every highlight comes in from the left. */
+  .highlights .in-right {
+    --in-x: calc(var(--in) * -1);
+  }
+
   .featured__fields,
   .highlights,
   .try {
