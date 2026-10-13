@@ -8,6 +8,7 @@ const props = withDefaults(defineProps<{ variant?: 'link' | 'button'; primary?: 
 
 const t = useSiteContent()
 const localePath = useLocalePath()
+const { track } = useAnalytics()
 
 const ready = ref(false)
 const busy = ref(false)
@@ -31,6 +32,8 @@ async function download(event?: MouseEvent) {
   try {
     const { downloadCvPdf } = await import('~/utils/cv-pdf')
     await downloadCvPdf(t.value.cv)
+    // Built in the browser, so GA's own download tracking never sees it.
+    track('file_download', { file_name: t.value.cv.fileName, file_extension: 'pdf' })
   } catch (error) {
     console.error(error)
     failed.value = true

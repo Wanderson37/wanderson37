@@ -222,6 +222,14 @@ const pt: SiteContent = {
     rights: 'Wanderson Oliveira'
   },
 
+  consent: {
+    label: 'Consentimento de cookies',
+    text: 'Posso usar cookies do Google Analytics para ver como os visitantes usam este site? Nada é medido se você não aceitar.',
+    accept: 'Aceitar',
+    decline: 'Recusar',
+    settings: 'Preferências de cookies'
+  },
+
   notFound: {
     title: 'Página não encontrada',
     errorTitle: 'Algo deu errado',

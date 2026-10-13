@@ -222,6 +222,14 @@ const en: SiteContent = {
     rights: 'Wanderson Oliveira'
   },
 
+  consent: {
+    label: 'Cookie consent',
+    text: 'May I use Google Analytics cookies to see how visitors use this site? Nothing is measured unless you accept.',
+    accept: 'Accept',
+    decline: 'Decline',
+    settings: 'Cookie settings'
+  },
+
   notFound: {
     title: 'Page not found',
     errorTitle: 'Something went wrong',

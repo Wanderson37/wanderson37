@@ -15,6 +15,14 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css', '~/assets/css/status-badge.css'],
 
+  runtimeConfig: {
+    public: {
+      // GA4 measurement ID (G-…), from NUXT_PUBLIC_GA_ID at build time. Empty means
+      // no analytics and no consent bar: local dev and previews stay out of the data.
+      gaId: ''
+    }
+  },
+
   app: {
     head: {
       link: [

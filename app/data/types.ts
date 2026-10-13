@@ -147,6 +147,14 @@ export interface SiteContent {
   footer: {
     rights: string
   }
+  consent: {
+    label: string
+    text: string
+    accept: string
+    decline: string
+    /** Footer button that reopens the bar. */
+    settings: string
+  }
   notFound: {
     title: string
     errorTitle: string

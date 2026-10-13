@@ -97,6 +97,8 @@ html {
   text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 24px;
+  /* Height of the consent bar while it is open (set in ConsentBanner). */
+  scroll-padding-bottom: var(--consent-h, 0px);
 }
 
 body {
@@ -109,6 +111,7 @@ body {
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: var(--consent-h, 0px);
 }
 
 h1,
@@ -458,6 +461,7 @@ main {
   }
 
   body {
+    padding-bottom: 0;
     background: #fff;
     font-size: 10.5pt;
   }

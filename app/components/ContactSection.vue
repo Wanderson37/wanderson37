@@ -3,6 +3,7 @@ import { links } from '~/data/links'
 
 const t = useSiteContent()
 const localePath = useLocalePath()
+const { track } = useAnalytics()
 
 const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 </script>
@@ -17,7 +18,7 @@ const bare = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(
       <dl class="fields contact__fields">
         <div class="in-row">
           <dt>{{ t.contact.emailLabel }}</dt>
-          <dd><a :href="`mailto:${links.email}`">{{ links.email }}</a></dd>
+          <dd><a :href="`mailto:${links.email}`" @click="track('email_click')">{{ links.email }}</a></dd>
         </div>
         <div class="in-row">
           <dt>LinkedIn</dt>

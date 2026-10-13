@@ -37,4 +37,5 @@ useHead(() => ({
   <SiteHeader />
   <NuxtPage />
   <SiteFooter />
+  <ConsentBanner />
 </template>
