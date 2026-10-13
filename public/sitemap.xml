@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.wanderson37.dev</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/cv</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/cv"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/cv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/cv"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/pt/cv</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/cv"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/cv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/cv"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/pt/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/privacy"/>
+  </url>
+</urlset>

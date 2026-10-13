@@ -1,0 +1,472 @@
+/*
+  Direction A, "Field sheet": the vocabulary of the tools I build (job sheets,
+  check-ins, inspection records). Label/value grids, hairline rules, data in mono.
+  Every color comes from the six palette tokens below. Signal is reserved for
+  the primary action and the "offline / queued" state, and is never text on Paper.
+*/
+
+:root {
+  --paper: #f5f6f7; /* background */
+  --ink: #14181d; /* text, focus ring - 16.5:1 on paper */
+  --graphite: #545d68; /* labels, secondary text, control borders - 6.2:1 */
+  --rule: #d3d8de; /* hairlines, decorative only */
+  --signal: #e35205; /* primary button (ink text, 4.65:1), offline state */
+  --synced: #1b7f4c; /* "synced" state text - 4.64:1 */
+  --on-signal: #14181d; /* primary button text: stays dark wherever the button sits */
+
+  /*
+    The same six tokens for a dark background: same hues, only lightness moves.
+    Used by the dark theme and by the Ink bands in both themes. On paper-dark:
+    ink 14.6:1, graphite 6.4:1, synced 6.6:1, on-signal on signal 5.6:1.
+  */
+  --paper-dark: #14181d;
+  --ink-dark: #e6e9ec;
+  --graphite-dark: #949ca7;
+  --rule-dark: #323941;
+  --signal-dark: #f0641a;
+  --synced-dark: #45b07a;
+  --band: var(--paper-dark); /* Ink in the light theme; a step above the background in the dark one */
+
+  --wide: 112%; /* font-stretch for headings */
+
+  --dur: 180ms; /* buttons, links, menu */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --in: 40px; /* how far blocks travel when they assemble on scroll */
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.375rem);
+  --step-4: clamp(2.125rem, 1.4rem + 3.4vw, 3.5rem);
+
+  --measure: 66ch;
+  --max: 1120px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section: clamp(56px, 9vw, 112px);
+  --radius: 4px;
+
+  color-scheme: light;
+}
+
+/*
+  Dark theme. It follows the system unless the visitor picked a theme with the
+  header button (data-theme, set before the first paint by the inline script
+  in nuxt.config). Pages with data-theme-lock (the CV) stay light, and print
+  never matches `screen`, so it stays light too. The block is repeated because
+  one selector can't express "system dark, or picked dark".
+*/
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme-lock]) {
+    --paper: var(--paper-dark);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
+    --band: #1e2329;
+
+    color-scheme: dark;
+  }
+}
+
+@media screen {
+  :root[data-theme='dark']:not([data-theme-lock]) {
+    --paper: var(--paper-dark);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
+    --band: #1e2329;
+
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  /* Height of the consent bar while it is open (set in ConsentBanner). */
+  scroll-padding-bottom: var(--consent-h, 0px);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Archivo, 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--step-0);
+  font-stretch: 100%;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: var(--consent-h, 0px);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-stretch: var(--wide);
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2.5px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+code,
+pre,
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+
+/* ---------- Layout ---------- */
+
+/*
+  Blocks slide in from the sides (see Motion), so main clips sideways overflow.
+  `clip`, not `hidden`: it doesn't create a scroll container, so the scroll
+  timelines keep following the page.
+*/
+main {
+  overflow-x: clip;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --in: 16px;
+  }
+}
+
+.container {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section);
+  border-top: 1px solid var(--rule);
+}
+
+.section-title {
+  font-size: var(--step-3);
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+/*
+  Full-width Ink bands (Working with me, Contact and the footer). Inside a band
+  the tokens take their dark values, so every component inverts on its own.
+  In the dark theme the band is only 1.13:1 from the background, so the
+  section's top rule (rule-dark here) is what marks its edge. Printed pages
+  skip this and stay light.
+*/
+@media screen {
+  .band {
+    --paper: var(--band);
+    --ink: var(--ink-dark);
+    --graphite: var(--graphite-dark);
+    --rule: var(--rule-dark);
+    --signal: var(--signal-dark);
+    --synced: var(--synced-dark);
+
+    color-scheme: dark;
+    background: var(--paper);
+    color: var(--ink);
+  }
+}
+
+/* Title on the left, content on the right (Services, About). */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0 clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Shown only when JavaScript is off (e.g. the demo's "turn on JavaScript" hint). */
+.no-scripting-only {
+  display: none;
+}
+
+@media (scripting: none) {
+  .no-scripting-only {
+    display: block;
+  }
+
+  /* !important: components set their own display, and this has to win. */
+  .needs-js {
+    display: none !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: 8px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font: 600 var(--step-0) / 1.2 Archivo, 'Helvetica Neue', Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: inset 0 -3px 0 var(--ink);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: var(--on-signal);
+}
+
+.btn--primary:hover {
+  box-shadow: inset 0 -3px 0 var(--on-signal);
+}
+
+.btn[aria-busy='true'] {
+  cursor: progress;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Field rows (label / value) ---------- */
+
+.fields {
+  display: grid;
+}
+
+.fields > div {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 4px 16px;
+  padding-block: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.fields dt {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: var(--step--1);
+  line-height: 1.75;
+  color: var(--graphite);
+}
+
+@media (max-width: 480px) {
+  .fields > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Motion ---------- */
+
+/*
+  Movement only for people who haven't asked to reduce it. Every animation and
+  transition sits inside a no-preference query, here or in the components (hero
+  entrance, print reveal, demo list), because shortening durations isn't enough:
+  an entrance with a delay would still hold elements hidden for that delay.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  .btn {
+    transition:
+      color var(--dur) var(--ease),
+      background-color var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease),
+      text-decoration-color var(--dur) var(--ease),
+      text-decoration-thickness var(--dur) var(--ease),
+      transform var(--dur) var(--ease);
+  }
+
+  /* Language switch and the other page changes (Nuxt's View Transitions). */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: var(--ease);
+  }
+}
+
+/*
+  Blocks after the hero assemble as they scroll in: .in-left and .in-right
+  slide in from their side, .in-row draws a label/value row from left to
+  right, hairline included. Each block is in place 220px of scroll after it
+  appears, however tall it is. Progress follows the scroll position, not a timer,
+  so jumping to a section shows it already assembled. `backwards` leaves no
+  transform or clip once a block is in, which keeps focus rings unclipped.
+  Browsers without scroll-driven animations, print and reduced motion get the
+  blocks as they are.
+*/
+.in-left {
+  --in-x: calc(var(--in) * -1);
+}
+
+.in-right {
+  --in-x: var(--in);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .in-left,
+    .in-right {
+      animation: in-side linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+
+    .in-row {
+      animation: in-row linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+  }
+}
+
+@keyframes in-side {
+  from {
+    opacity: 0;
+    transform: translateX(var(--in-x));
+  }
+}
+
+@keyframes in-row {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* A safety net for anything that still moves (e.g. browser defaults). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Print (the CV page prints cleanly on A4) ---------- */
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm;
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0;
+    background: #fff;
+    font-size: 10.5pt;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

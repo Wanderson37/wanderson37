@@ -1,0 +1,21 @@
+# Version updates for the Nuxt app. Dependabot reads this file from main and
+# opens its PRs against main.
+version: 2
+updates:
+  - package-ecosystem: npm # also covers yarn.lock (Yarn 1)
+    directory: /
+    schedule:
+      interval: weekly
+    # Only propose versions published at least 14 days ago: compromised
+    # releases are usually caught and pulled within days. Security updates
+    # ignore this and still arrive right away.
+    cooldown:
+      default-days: 14
+    # One PR a week for minor and patch updates (Nuxt and its modules move
+    # together); each major update gets its own PR.
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: chore
+      include: scope
