@@ -82,6 +82,12 @@ export interface CvContent {
   languages: string[]
 }
 
+export interface PrivacySection {
+  title: string
+  paragraphs: string[]
+  items?: string[]
+}
+
 export interface SiteContent {
   meta: {
     title: string
@@ -146,6 +152,7 @@ export interface SiteContent {
   }
   footer: {
     rights: string
+    privacy: string
   }
   consent: {
     label: string
@@ -154,6 +161,23 @@ export interface SiteContent {
     decline: string
     /** Footer button that reopens the bar. */
     settings: string
+    /** Link to the privacy page, after the text. */
+    privacy: string
+  }
+  privacy: {
+    meta: { title: string; description: string }
+    title: string
+    updated: string
+    intro: string
+    sections: PrivacySection[]
+    /** The last section, with the button that reopens the bar and the contact. */
+    rights: {
+      title: string
+      paragraphs: string[]
+      changeChoice: string
+      controllerLabel: string
+      controller: string
+    }
   }
   notFound: {
     title: string

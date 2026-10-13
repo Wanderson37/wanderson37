@@ -24,4 +24,16 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/cv"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/cv"/>
   </url>
+  <url>
+    <loc>https://www.wanderson37.dev/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.wanderson37.dev/pt/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wanderson37.dev/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.wanderson37.dev/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wanderson37.dev/privacy"/>
+  </url>
 </urlset>

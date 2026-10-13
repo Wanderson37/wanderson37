@@ -219,7 +219,8 @@ const en: SiteContent = {
   },
 
   footer: {
-    rights: 'Wanderson Oliveira'
+    rights: 'Wanderson Oliveira',
+    privacy: 'Privacy'
   },
 
   consent: {
@@ -227,7 +228,56 @@ const en: SiteContent = {
     text: 'May I use Google Analytics cookies to see how visitors use this site? Nothing is measured unless you accept.',
     accept: 'Accept',
     decline: 'Decline',
-    settings: 'Cookie settings'
+    settings: 'Cookie settings',
+    privacy: 'Privacy policy'
+  },
+
+  privacy: {
+    meta: {
+      title: 'Privacy — Wanderson Oliveira',
+      description:
+        'What this site collects: Google Analytics only if you accept, no ads and no accounts. Cookies, who processes the data and your rights.'
+    },
+    title: 'Privacy',
+    updated: 'Last updated: 13 October 2026',
+    intro: 'This site is a portfolio. It has no accounts, forms or ads, and it collects as little as it can.',
+    sections: [
+      {
+        title: 'Analytics, only if you accept',
+        paragraphs: [
+          'If you accept in the cookie bar, the site loads Google Analytics to show me which pages are visited and how people find them. If you decline or never answer, it is not loaded and nothing is measured. When it runs, it records:'
+        ],
+        items: [
+          'Pages viewed and the site that sent you here.',
+          'Device, browser and approximate location (country and city), which Google works out from your IP address without storing it.',
+          'Two actions: downloading the CV and clicking the email link.'
+        ]
+      },
+      {
+        title: 'Cookies',
+        paragraphs: [
+          'Google Analytics sets two cookies, _ga and one starting with _ga_, to tell one visit from another. They are set only after you accept and last up to 2 years.',
+          'The site also keeps your theme and cookie choices in your browser. They never leave your device.'
+        ]
+      },
+      {
+        title: 'Who processes the data',
+        paragraphs: [
+          'Google processes the analytics data, possibly outside Brazil and the European Union. Advertising features and Google signals are off, so the data is not used for ads. Visit-level data is kept for 2 months; after that only totals remain.',
+          'The site is hosted on Vercel, which handles every request and may keep technical logs, such as IP address and browser, to run and protect the service. Fonts and images are served by this site itself; other sites are only reached when you follow a link to them.'
+        ]
+      }
+    ],
+    rights: {
+      title: 'Your choices and rights',
+      paragraphs: [
+        'You can change your answer at any time with “Cookie settings” at the bottom of every page. Declining removes the analytics cookies.',
+        'Under the LGPD and the GDPR you can ask what data about you exists, have it corrected or deleted, and withdraw your consent. If you email me, I use your address and message only to reply.'
+      ],
+      changeChoice: 'Change cookie choice',
+      controllerLabel: 'Data controller',
+      controller: 'Wanderson Oliveira, Manaus, Brazil'
+    }
   },
 
   notFound: {

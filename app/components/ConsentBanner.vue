@@ -2,6 +2,7 @@
 import type { Consent } from '~/composables/useAnalytics'
 
 const t = useSiteContent()
+const localePath = useLocalePath()
 const { enabled, consent, ready, asking, choose } = useAnalytics()
 
 // Client only by nature: the choice is read after hydration, so the prerendered
@@ -43,7 +44,9 @@ function answer(value: Consent) {
 <template>
   <section v-if="visible" ref="bar" class="consent band" :aria-label="t.consent.label">
     <div class="container consent__inner">
-      <p class="consent__text">{{ t.consent.text }}</p>
+      <p class="consent__text">
+        {{ t.consent.text }} <NuxtLink :to="localePath('/privacy')">{{ t.consent.privacy }}</NuxtLink>
+      </p>
       <!-- Same weight for both answers: declining is as easy as accepting. -->
       <div class="btn-row">
         <button type="button" class="btn consent__btn" @click="answer('granted')">{{ t.consent.accept }}</button>

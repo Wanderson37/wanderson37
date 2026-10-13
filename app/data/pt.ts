@@ -219,7 +219,8 @@ const pt: SiteContent = {
   },
 
   footer: {
-    rights: 'Wanderson Oliveira'
+    rights: 'Wanderson Oliveira',
+    privacy: 'Privacidade'
   },
 
   consent: {
@@ -227,7 +228,56 @@ const pt: SiteContent = {
     text: 'Posso usar cookies do Google Analytics para ver como os visitantes usam este site? Nada é medido se você não aceitar.',
     accept: 'Aceitar',
     decline: 'Recusar',
-    settings: 'Preferências de cookies'
+    settings: 'Preferências de cookies',
+    privacy: 'Política de privacidade'
+  },
+
+  privacy: {
+    meta: {
+      title: 'Privacidade — Wanderson Oliveira',
+      description:
+        'O que este site coleta: Google Analytics só se você aceitar, sem anúncios e sem contas. Cookies, quem trata os dados e seus direitos.'
+    },
+    title: 'Privacidade',
+    updated: 'Atualizado em 13 de outubro de 2026',
+    intro: 'Este site é um portfólio. Não tem contas, formulários nem anúncios, e coleta o mínimo possível.',
+    sections: [
+      {
+        title: 'Analytics, só se você aceitar',
+        paragraphs: [
+          'Se você aceitar na barra de cookies, o site carrega o Google Analytics para me mostrar quais páginas são visitadas e como as pessoas chegam até elas. Se você recusar ou não responder, ele não é carregado e nada é medido. Quando ativo, ele registra:'
+        ],
+        items: [
+          'As páginas vistas e o site que trouxe você até aqui.',
+          'Dispositivo, navegador e localização aproximada (país e cidade), que o Google deduz do seu endereço IP sem armazená-lo.',
+          'Duas ações: baixar o currículo e clicar no link de e-mail.'
+        ]
+      },
+      {
+        title: 'Cookies',
+        paragraphs: [
+          'O Google Analytics grava dois cookies, _ga e um que começa com _ga_, para distinguir uma visita da outra. Eles só são gravados depois que você aceita e duram até 2 anos.',
+          'O site também guarda no seu navegador as suas escolhas de tema e de cookies. Elas nunca saem do seu dispositivo.'
+        ]
+      },
+      {
+        title: 'Quem trata os dados',
+        paragraphs: [
+          'O Google trata os dados de analytics, possivelmente fora do Brasil e da União Europeia. Os recursos de publicidade e os Google signals estão desligados, então os dados não são usados para anúncios. Os dados de cada visita ficam guardados por 2 meses; depois disso, restam só os totais.',
+          'O site é hospedado na Vercel, que recebe todas as requisições e pode manter registros técnicos, como endereço IP e navegador, para operar e proteger o serviço. Fontes e imagens vêm do próprio site; outros sites só são acessados quando você segue um link para eles.'
+        ]
+      }
+    ],
+    rights: {
+      title: 'Suas escolhas e direitos',
+      paragraphs: [
+        'Você pode mudar sua resposta a qualquer momento em “Preferências de cookies”, no fim de cada página. Recusar apaga os cookies de analytics.',
+        'Pela LGPD e pelo GDPR, você pode perguntar quais dados seus existem, pedir correção ou exclusão e retirar seu consentimento. Se você me mandar um e-mail, uso seu endereço e sua mensagem só para responder.'
+      ],
+      changeChoice: 'Mudar escolha de cookies',
+      controllerLabel: 'Controlador',
+      controller: 'Wanderson Oliveira, Manaus, Brasil'
+    }
   },
 
   notFound: {
